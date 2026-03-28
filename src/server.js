@@ -66,7 +66,7 @@ import authRoutes from './routers/authRoutes.js';
 import meetingRouter from './routers/meetingRouter.js';
 import notesRouter from './routers/notesRouter.js';
 import disputeRouter from './routers/disputeRouter.js';
-import organizationRouter from './routers/organizationRouter.js';
+import organizationRouter from './routers/organization.js';
 import anonymousRouter from './routers/Anonymous.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
