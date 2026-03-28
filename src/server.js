@@ -20,13 +20,13 @@ import anonymousRouter from './routers/Anonymous.js';
 
 
 const app = express();
-const httpServer = createServer(app);           // ← naya
-const io = new Server(httpServer, {             // ← naya
-    cors: {
-        origin: true,
-        credentials: true
-    }
-});
+// const httpServer = createServer(app);           // ← naya
+// const io = new Server(httpServer, {             // ← naya
+//     cors: {
+//         origin: true,
+//         credentials: true
+//     }
+// });
 
 const PORT = process.env.PORT;
 
@@ -49,8 +49,8 @@ connectDb()
     .then(() => {
         console.log("MongoDb connected");
 
-        initSocket(io);                             // ← naya: socket events register karo
-        httpServer.listen(PORT, () => {             // ← app.listen → httpServer.listen
+        // initSocket(io);                             // ← naya: socket events register karo
+        app.listen(PORT, () => {             // ← app.listen → httpServer.listen
             console.log(`Server is running at http://localhost:${PORT}`);
         });
     });
