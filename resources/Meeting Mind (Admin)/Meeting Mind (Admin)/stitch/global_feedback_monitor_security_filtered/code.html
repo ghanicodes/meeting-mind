@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Feedback Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101622",
+                        "slate-custom": {
+                            50: "#f8fafc",
+                            100: "#f1f5f9",
+                            200: "#e2e8f0",
+                            800: "#1e293b",
+                            900: "#0f172a",
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 20px; }
+    </style>
+</head>
+<body class="bg-background-light text-slate-custom-800 antialiased font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-slate-custom-100 border-r border-slate-custom-200 flex flex-col shrink-0">
+<div class="p-4 border-b border-slate-custom-200 flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h1 class="text-sm font-bold text-slate-custom-900 leading-tight">Monitor</h1>
+<p class="text-[10px] text-slate-custom-800/60 uppercase tracking-wider font-semibold">v1.0.4 Enterprise</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<div class="px-3 mb-2 text-[11px] font-bold text-slate-custom-800/50 uppercase tracking-widest">Navigation</div>
+<div class="space-y-0.5 px-2">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium bg-white border border-slate-custom-200 rounded text-primary" href="#">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+                        Dashboard
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-custom-800 hover:bg-slate-custom-200 rounded transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+                        Feedback
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-custom-800 hover:bg-slate-custom-200 rounded transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+                        Analytics
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-custom-800 hover:bg-slate-custom-200 rounded transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+                        Logs
+                    </a>
+</div>
+<div class="px-3 mt-8 mb-2 text-[11px] font-bold text-slate-custom-800/50 uppercase tracking-widest">Configuration</div>
+<div class="space-y-0.5 px-2">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-custom-800 hover:bg-slate-custom-200 rounded transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        System Settings
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-custom-800 hover:bg-slate-custom-200 rounded transition-colors" href="#">
+<span class="material-symbols-outlined">shield</span>
+                        Moderation Rules
+                    </a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-custom-200 bg-slate-custom-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-custom-200 border border-slate-custom-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCji3Mwt4fIvG41Lo-bnnSiufY9bAl3cxetOJTLkGVDbv_nF69nwq2vUzNtScdm3-so17APPAwErhrxZM5X0Kp_bgm0QaJCQqH3jZHGVO7NpqrMGzBLknNb5q6HZChmTUny2Fr177aVyXR3V8QwfsiKowlg1QvCm3OIW3D257COnBQow3LHydoBc47FcA5MHTeZ6Y4nSmGOn_roUqlF5gYAkGHJgDzM387GXG_XSiTm8JSeI3lpMBsfBkUU2zB8zbygXO-JvBd7CcIX"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-semibold text-slate-custom-900 truncate">Admin Console</p>
+<p class="text-[10px] text-slate-custom-800/70 truncate">Global Moderator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-white">
+<!-- Header -->
+<header class="h-14 border-b border-slate-custom-200 flex items-center justify-between px-6 shrink-0">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-bold text-slate-custom-900 tracking-tight">Global Feedback Monitor</h2>
+<div class="h-4 w-[1px] bg-slate-custom-200"></div>
+<div class="flex gap-1">
+<span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded-sm border border-green-200 uppercase">Live</span>
+<span class="px-2 py-0.5 bg-slate-custom-100 text-slate-custom-800 text-[10px] font-bold rounded-sm border border-slate-custom-200 uppercase">1,240 Total</span>
+</div>
+</div>
+<div class="flex items-center gap-3 w-1/3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-custom-800/40">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 text-sm bg-slate-custom-50 border border-slate-custom-200 rounded focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-slate-custom-800/40 transition-all" placeholder="Search Feedback or User ID..." type="text"/>
+</div>
+<button class="p-1.5 border border-slate-custom-200 rounded hover:bg-slate-custom-100 text-slate-custom-800 shrink-0">
+<span class="material-symbols-outlined">tune</span>
+</button>
+<button class="p-1.5 border border-slate-custom-200 rounded hover:bg-slate-custom-100 text-slate-custom-800 shrink-0 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+</div>
+</header>
+<!-- Filters Bar -->
+<div class="px-6 py-2 bg-slate-custom-50 border-b border-slate-custom-200 flex items-center gap-2 overflow-x-auto shrink-0">
+<button class="px-3 py-1 bg-primary text-white text-xs font-semibold rounded border border-primary">All Sentiments</button>
+<button class="px-3 py-1 bg-white text-slate-custom-800 text-xs font-semibold rounded border border-slate-custom-200 hover:bg-slate-custom-100">Positive</button>
+<button class="px-3 py-1 bg-white text-slate-custom-800 text-xs font-semibold rounded border border-slate-custom-200 hover:bg-slate-custom-100">Neutral</button>
+<button class="px-3 py-1 bg-white text-slate-custom-800 text-xs font-semibold rounded border border-slate-custom-200 hover:bg-slate-custom-100">Negative</button>
+<div class="h-4 w-[1px] bg-slate-custom-200 mx-2"></div>
+<button class="px-3 py-1 bg-white text-slate-custom-800 text-xs font-semibold rounded border border-slate-custom-200 hover:bg-slate-custom-100 flex items-center gap-1">
+                    Time Range: Last 24h <span class="material-symbols-outlined !text-[14px]">expand_more</span>
+</button>
+</div>
+<!-- Scrollable List -->
+<div class="flex-1 overflow-y-auto p-4 space-y-2">
+<!-- Feedback Card 1: Neutral -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-slate-custom-200"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "The new dashboard loading speed is impressive, but the export button is hard to find. It took me 5 minutes to locate it in the sub-menu."
+                            </p>
+<span class="px-2 py-0.5 bg-black text-white text-[10px] font-bold rounded-[2px] shrink-0 border border-black uppercase tracking-tight">Profanity Filtered</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #8821</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>2 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-slate-custom-800/40">Neutral Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 2: Positive -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-green-500/30"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "Incredible improvement over the previous version! The data visualization tools are exactly what our team needed for the quarterly reports."
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #1042</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>4 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-green-600">Positive Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 3: Negative -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-red-500/30"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "The mobile application keeps crashing when I try to upload high-resolution screenshots. This is hindering my workflow significantly."
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #2291</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>6 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-red-600">Negative Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 4: Neutral -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-slate-custom-200"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "Does the platform support Japanese character sets? I'm seeing some formatting issues in the report summaries."
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #9931</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>7 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-slate-custom-800/40">Neutral Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 5: Positive -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-green-500/30"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "The integration with our CRM was seamless. Great documentation."
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #5521</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>8 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-green-600">Positive Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 6: Negative with Filter -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-red-500/30"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "I hate the new [Filtered Content] UI. Why did you [Filtered Content] change the layout? It's completely [Filtered Content] broken for power users."
+                            </p>
+<span class="px-2 py-0.5 bg-black text-white text-[10px] font-bold rounded-[2px] shrink-0 border border-black uppercase tracking-tight">Profanity Filtered</span>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #1109</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>12 hours ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-red-600">Negative Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feedback Card 7: Neutral -->
+<div class="group flex bg-white border border-slate-custom-200 rounded overflow-hidden hover:border-slate-custom-800 transition-colors">
+<div class="w-1.5 bg-slate-custom-200"></div>
+<div class="flex-1 p-3">
+<div class="flex items-start justify-between gap-4 mb-1">
+<p class="text-sm leading-relaxed text-slate-custom-800 font-normal italic">
+                                "Suggested feature: A toggle to switch between compact and expanded views in the logs. Right now it's a bit too much scrolling."
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-3 text-[11px] font-medium text-slate-custom-800/60 uppercase tracking-wide">
+<span>User #3342</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span>1 day ago</span>
+<span class="w-1 h-1 bg-slate-custom-200 rounded-full"></span>
+<span class="text-slate-custom-800/40">Neutral Sentiment</span>
+</div>
+<div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">reply</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">flag</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined !text-base">archive</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Pagination -->
+<footer class="h-10 border-t border-slate-custom-200 bg-slate-custom-50 px-6 flex items-center justify-between shrink-0">
+<p class="text-[11px] text-slate-custom-800/60 font-medium">Showing 1-50 of 1,240 entries</p>
+<div class="flex items-center gap-1">
+<button class="p-1 text-slate-custom-800/40 hover:text-slate-custom-800"><span class="material-symbols-outlined">chevron_left</span></button>
+<div class="flex items-center gap-2 text-[11px] font-bold">
+<span class="w-5 h-5 flex items-center justify-center bg-primary text-white rounded-sm">1</span>
+<span class="w-5 h-5 flex items-center justify-center hover:bg-slate-custom-200 rounded-sm cursor-pointer">2</span>
+<span class="w-5 h-5 flex items-center justify-center hover:bg-slate-custom-200 rounded-sm cursor-pointer">3</span>
+<span>...</span>
+<span class="w-5 h-5 flex items-center justify-center hover:bg-slate-custom-200 rounded-sm cursor-pointer">25</span>
+</div>
+<button class="p-1 text-slate-custom-800 hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

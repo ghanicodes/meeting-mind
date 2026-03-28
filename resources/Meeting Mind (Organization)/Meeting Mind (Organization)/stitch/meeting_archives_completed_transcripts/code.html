@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meeting Archive | Corporate Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1E293B",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        "slate": {
+                            50: "#F8FAFC",
+                            100: "#F1F5F9",
+                            200: "#E2E8F0",
+                            300: "#CBD5E1",
+                            400: "#94A3B8",
+                            500: "#64748B",
+                            600: "#475569",
+                            700: "#334155",
+                            800: "#1E293B",
+                            900: "#0F172A",
+                        }
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sharp-border {
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 sharp-border border-r flex flex-col shrink-0">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">corporate_fare</span>
+</div>
+<div>
+<h1 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Org Portal</h1>
+<p class="text-[10px] text-slate-500 font-medium">CORPORATE ARCHIVE</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-100 dark:bg-slate-800 text-primary dark:text-white rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-sm font-medium">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-sm font-medium">Team</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-2 py-2">
+<div class="size-8 rounded-full bg-slate-200" data-alt="User profile avatar grayscale"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-bold truncate">Admin User</p>
+<p class="text-[10px] text-slate-500 truncate">admin@corp.org</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400">history</span>
+<h2 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-tight">Past Meeting Archive</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 text-xs bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Search archive..." type="text"/>
+</div>
+<button class="size-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-8 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Page Action Bar -->
+<div class="flex items-end justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Structured Records</h3>
+<p class="text-sm text-slate-500">Comprehensive log of all organizational proceedings and decisions.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                            </button>
+<button class="px-4 py-2 bg-primary text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-sm">ios_share</span> Export All
+                            </button>
+</div>
+</div>
+<!-- Meeting Table/List -->
+<div class="bg-white dark:bg-slate-900 sharp-border overflow-hidden">
+<div class="grid grid-cols-12 gap-4 px-6 py-3 bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+<div class="col-span-5">Meeting Title</div>
+<div class="col-span-2">Date</div>
+<div class="col-span-3">Scribe</div>
+<div class="col-span-2 text-right">Actions</div>
+</div>
+<!-- Row 1 -->
+<div class="group border-b border-slate-100 dark:border-slate-800 last:border-0">
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 transition-transform group-hover:rotate-90">chevron_right</span>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Q3 Financial Alignment &amp; Budget Review</span>
+</div>
+<div class="col-span-2 text-xs text-slate-600 dark:text-slate-400">Oct 24, 2023</div>
+<div class="col-span-3 flex items-center gap-2">
+<div class="size-5 rounded-full bg-slate-200" data-alt="Small user avatar grayscale"></div>
+<span class="text-xs text-slate-600 dark:text-slate-400">Sarah Jenkins</span>
+</div>
+<div class="col-span-2 flex justify-end gap-3">
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+                                    </button>
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                                    </button>
+</div>
+</div>
+<!-- Expansion Placeholder -->
+<div class="hidden group-focus-within:block px-14 pb-4 bg-slate-50 dark:bg-slate-800/30">
+<div class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-2 space-y-2">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Executive Summary</p>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+                                        "Majority consensus reached on reallocation of Q4 marketing funds to R&amp;D. Minority opinion noted regarding potential impact on regional visibility."
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="group border-b border-slate-100 dark:border-slate-800 last:border-0">
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 transition-transform group-hover:rotate-90">chevron_right</span>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Infrastructure Scale Strategy Sync</span>
+</div>
+<div class="col-span-2 text-xs text-slate-600 dark:text-slate-400">Oct 20, 2023</div>
+<div class="col-span-3 flex items-center gap-2">
+<div class="size-5 rounded-full bg-slate-200" data-alt="Small user avatar grayscale"></div>
+<span class="text-xs text-slate-600 dark:text-slate-400">Michael Chen</span>
+</div>
+<div class="col-span-2 flex justify-end gap-3">
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+                                    </button>
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Row 3 (Expanded Style Example) -->
+<div class="group border-b border-slate-100 dark:border-slate-800 last:border-0 bg-slate-50/50 dark:bg-slate-800/20">
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-600 rotate-90">chevron_right</span>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Human Resources: Q4 Hiring Freeze</span>
+</div>
+<div class="col-span-2 text-xs text-slate-600 dark:text-slate-400">Oct 15, 2023</div>
+<div class="col-span-3 flex items-center gap-2">
+<div class="size-5 rounded-full bg-slate-200" data-alt="Small user avatar grayscale"></div>
+<span class="text-xs text-slate-600 dark:text-slate-400">Sarah Jenkins</span>
+</div>
+<div class="col-span-2 flex justify-end gap-3">
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+                                    </button>
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                                    </button>
+</div>
+</div>
+<div class="px-14 pb-4">
+<div class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-2 space-y-2">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Opinions &amp; Consensus</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<p class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Operations Team</p>
+<p class="text-[11px] text-slate-500 leading-relaxed italic">"Expressed concern over load management without new hires. Proposed automation as a compromise."</p>
+</div>
+<div class="space-y-1">
+<p class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Executive Board</p>
+<p class="text-[11px] text-slate-500 leading-relaxed italic">"Prioritizing cash flow preservation. Hiring freeze confirmed until Jan 1st."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="group border-b border-slate-100 dark:border-slate-800 last:border-0">
+<div class="grid grid-cols-12 gap-4 px-6 py-4 items-center hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors">
+<div class="col-span-5 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-slate-500 transition-transform group-hover:rotate-90">chevron_right</span>
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Monthly Organizational All-Hands</span>
+</div>
+<div class="col-span-2 text-xs text-slate-600 dark:text-slate-400">Oct 01, 2023</div>
+<div class="col-span-3 flex items-center gap-2">
+<div class="size-5 rounded-full bg-slate-200" data-alt="Small user avatar grayscale"></div>
+<span class="text-xs text-slate-600 dark:text-slate-400">David Rossi</span>
+</div>
+<div class="col-span-2 flex justify-end gap-3">
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span> PDF
+                                    </button>
+<button class="text-[10px] font-bold text-slate-400 hover:text-primary dark:hover:text-white uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500">
+<div>Showing 1-4 of 124 entries</div>
+<div class="flex gap-1">
+<button class="size-8 flex items-center justify-center sharp-border bg-white dark:bg-slate-900 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-8 flex items-center justify-center sharp-border bg-primary text-white">1</button>
+<button class="size-8 flex items-center justify-center sharp-border bg-white dark:bg-slate-900 hover:bg-slate-50">2</button>
+<button class="size-8 flex items-center justify-center sharp-border bg-white dark:bg-slate-900 hover:bg-slate-50">3</button>
+<button class="size-8 flex items-center justify-center sharp-border bg-white dark:bg-slate-900 hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

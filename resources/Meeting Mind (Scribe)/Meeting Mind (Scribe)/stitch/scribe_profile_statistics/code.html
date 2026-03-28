@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scribe Profile &amp; Performance - Precision Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1E293B",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101622",
+                        "slate-custom": "#F8FAFC",
+                        "border-custom": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E293B;
+        }
+        .no-shadow {
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-primary font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-custom px-6 lg:px-10 py-3 bg-white">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+</div>
+<h2 class="text-primary text-lg font-bold leading-tight tracking-tight">Precision Workspace</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex cursor-pointer items-center justify-center rounded h-10 bg-slate-custom text-primary border border-border-custom px-3">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded h-10 bg-slate-custom text-primary border border-border-custom px-3">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+<div class="bg-slate-custom border border-border-custom aspect-square rounded-full size-10 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-7xl mx-auto w-full px-6 lg:px-10 py-8">
+<!-- Page Header -->
+<div class="mb-10 border-b border-border-custom pb-6">
+<h1 class="text-3xl font-extrabold tracking-tight text-primary">Scribe Profile &amp; Performance</h1>
+<p class="text-slate-500 mt-2 text-sm">Manage your professional identity and monitor documentation accuracy.</p>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Personal Details -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<section>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Personal Details</h2>
+<div class="flex flex-col gap-6 max-w-2xl">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary" for="full-name">Full Name</label>
+<input class="w-full border border-border-custom rounded bg-white px-4 py-3 text-sm focus:ring-0 focus:border-primary outline-none" id="full-name" placeholder="Enter your full name" type="text" value="Alexander Sterling"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary" for="email">Email Address</label>
+<input class="w-full border border-border-custom rounded bg-white px-4 py-3 text-sm focus:ring-0 focus:border-primary outline-none" id="email" placeholder="name@precision.workspace" type="email" value="a.sterling@precision.workspace"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary" for="bio">Professional Bio</label>
+<textarea class="w-full border border-border-custom rounded bg-white px-4 py-3 text-sm focus:ring-0 focus:border-primary outline-none resize-none" id="bio" placeholder="Briefly describe your professional background..." rows="5">Specialized in medical transcription and executive documentation. Certified Scribe with 4+ years of experience in high-velocity meeting environments. Focused on precision, confidentiality, and technical accuracy.</textarea>
+</div>
+<div class="pt-4">
+<button class="bg-primary text-white font-bold py-3 px-8 rounded text-sm hover:opacity-90 transition-opacity">
+                                        Update Profile
+                                    </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Statistics -->
+<aside class="lg:col-span-4 flex flex-col gap-8 lg:border-l border-border-custom lg:pl-10">
+<section>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Scribe Performance</h2>
+<div class="flex flex-col gap-4">
+<!-- Metric Card 1 -->
+<div class="p-5 border border-border-custom rounded bg-slate-custom">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-slate-500 text-xl">description</span>
+<p class="text-xs font-medium text-slate-500">Total Meetings Documented</p>
+</div>
+<p class="text-3xl font-bold text-primary">1,482</p>
+</div>
+<!-- Metric Card 2 -->
+<div class="p-5 border border-border-custom rounded bg-slate-custom">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-slate-500 text-xl">verified</span>
+<p class="text-xs font-medium text-slate-500">Average Accuracy Rating</p>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-primary">99.4%</p>
+<p class="text-xs text-slate-400 font-medium">4.9 / 5.0</p>
+</div>
+</div>
+<!-- Metric Card 3 -->
+<div class="p-5 border border-border-custom rounded bg-slate-custom">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-slate-500 text-xl">bolt</span>
+<p class="text-xs font-medium text-slate-500">System Uptime</p>
+</div>
+<p class="text-3xl font-bold text-primary">100%</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-border-custom">
+<h3 class="text-sm font-bold text-primary mb-3">Recent Activity</h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center text-xs py-2 border-b border-border-custom/50">
+<span class="text-slate-500">Daily Compliance Audit</span>
+<span class="font-bold text-green-600">PASSED</span>
+</div>
+<div class="flex justify-between items-center text-xs py-2 border-b border-border-custom/50">
+<span class="text-slate-500">Last Shift Log</span>
+<span class="text-primary">Today, 09:14 AM</span>
+</div>
+<div class="flex justify-between items-center text-xs py-2">
+<span class="text-slate-500">Active Sessions</span>
+<span class="text-primary font-bold">1 Session</span>
+</div>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</main>
+<!-- Footer Footer (Minimalist) -->
+<footer class="mt-auto border-t border-border-custom py-6 px-10 text-center">
+<p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">
+                    Precision Workspace Documentation System © 2024
+                </p>
+</footer>
+</div>
+</div>
+</body></html>

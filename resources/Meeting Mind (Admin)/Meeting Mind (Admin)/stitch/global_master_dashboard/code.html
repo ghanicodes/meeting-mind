@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "slate-custom": "#1E293B",
+                        "gray-light": "#F1F5F9",
+                        "border-custom": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Meeting Mind Admin - Global Master Dashboard</title>
+</head>
+<body class="bg-white font-display text-slate-custom antialiased">
+<div class="flex min-h-screen">
+<!-- Vertical Sidebar -->
+<aside class="w-64 bg-gray-light border-r border-border-custom flex flex-col fixed h-full">
+<div class="p-6 border-b border-border-custom">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white text-sm">settings_suggest</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-custom text-sm font-semibold leading-tight">Meeting Mind</h1>
+<p class="text-slate-500 text-xs font-medium uppercase tracking-wider">Admin Panel</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-white border border-border-custom text-slate-custom shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-slate-500 hover:bg-white/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+<span class="text-sm font-medium">Organizations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-slate-500 hover:bg-white/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">video_chat</span>
+<span class="text-sm font-medium">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-slate-500 hover:bg-white/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="text-sm font-medium">Scribes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-slate-500 hover:bg-white/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-custom space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-slate-500 hover:bg-white/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">System Settings</span>
+</a>
+<div class="mt-4 px-3 py-3 bg-white border border-border-custom rounded flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Profile avatar of a corporate professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHqDB3Lj3KgpGc4V3xilfkwEj1iY4tRORp6HqY-vT-oGRzTU3Ian3ZP6ULTajOhoymhlWK43i5ChUsKIzy-DXi1piuZ6UKL1Kq9C7plce4-ShJ-L-70M3Os_vudILwVZG_VCTP4QzWV_bHCr7RG_vB3DBFeWen3jvDNz8M7ocYCESj6mwRj8_umB7bUAJ2A1dw_HxRYE99kZ162aU6w8TTMgqbTEcAvpSVXvUUWaUtmg3QOHXUhvBmu-qrKLhTma5zKjYwoPak2ZNh"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-semibold truncate">Alex Rivera</span>
+<span class="text-[10px] text-slate-400 truncate">Global Controller</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 min-h-screen bg-white">
+<!-- Header -->
+<header class="h-16 border-b border-border-custom flex items-center justify-between px-8 bg-white sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-semibold text-slate-custom tracking-tight">Global Master Dashboard</h2>
+<div class="h-4 w-[1px] bg-border-custom"></div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-gray-light border-none rounded text-sm w-64 focus:ring-1 focus:ring-primary/20 placeholder:text-slate-400" placeholder="Search system logs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-9 h-9 flex items-center justify-center rounded border border-border-custom text-slate-500 hover:bg-gray-light">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="h-9 px-4 flex items-center justify-center gap-2 rounded bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        New Scribe
+                    </button>
+</div>
+</header>
+<!-- Content Grid -->
+<div class="p-8 max-w-[1400px] mx-auto space-y-8">
+<!-- Stat Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-white border border-border-custom rounded flex flex-col gap-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Total Organizations</span>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-custom">1,284</h3>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">+12%</span>
+</div>
+</div>
+<div class="p-6 bg-white border border-border-custom rounded flex flex-col gap-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Active Meetings</span>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-custom">856</h3>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">+5.2%</span>
+</div>
+</div>
+<div class="p-6 bg-white border border-border-custom rounded flex flex-col gap-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-widest">Live Scribes</span>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-custom">432</h3>
+<span class="text-xs font-bold text-rose-600 bg-rose-50 px-1.5 py-0.5 rounded">-2.4%</span>
+</div>
+</div>
+<div class="p-6 bg-white border border-border-custom rounded flex flex-col gap-1">
+<span class="text-xs font-medium text-slate-400 uppercase tracking-widest">System Health</span>
+<div class="flex items-end justify-between">
+<h3 class="text-2xl font-bold text-slate-custom">99.9%</h3>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Stable</span>
+</div>
+</div>
+</div>
+<!-- Two-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Platform Growth Chart -->
+<div class="lg:col-span-8 space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-semibold text-slate-custom uppercase tracking-wider">Platform Growth</h4>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-medium bg-gray-light rounded border border-border-custom">Monthly</button>
+<button class="px-3 py-1 text-xs font-medium text-slate-400 hover:text-slate-600">Weekly</button>
+</div>
+</div>
+<div class="p-8 border border-border-custom rounded bg-white min-h-[400px] flex flex-col">
+<div class="flex items-baseline gap-4 mb-8">
+<span class="text-4xl font-bold text-slate-custom">24.5k</span>
+<div class="flex items-center text-emerald-600 font-medium text-sm">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                    18.2% vs last month
+                                </div>
+</div>
+<!-- Clean SVG Line Chart -->
+<div class="flex-1 w-full mt-4">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 800 250">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#135bec" stop-opacity="0.05"></stop>
+<stop offset="100%" stop-color="#135bec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid lines -->
+<line stroke="#F1F5F9" stroke-width="1" x1="0" x2="800" y1="50" y2="50"></line>
+<line stroke="#F1F5F9" stroke-width="1" x1="0" x2="800" y1="100" y2="100"></line>
+<line stroke="#F1F5F9" stroke-width="1" x1="0" x2="800" y1="150" y2="150"></line>
+<line stroke="#F1F5F9" stroke-width="1" x1="0" x2="800" y1="200" y2="200"></line>
+<!-- Area -->
+<path d="M0 200 L100 180 L200 190 L300 140 L400 120 L500 130 L600 80 L700 50 L800 20 L800 250 L0 250 Z" fill="url(#chartGradient)"></path>
+<!-- Main Line -->
+<path d="M0 200 L100 180 L200 190 L300 140 L400 120 L500 130 L600 80 L700 50 L800 20" fill="none" stroke="#135bec" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Data Points -->
+<circle cx="800" cy="20" fill="white" r="4" stroke="#135bec" stroke-width="2"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[11px] font-medium text-slate-400 uppercase tracking-tighter">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Recent Activity Feed -->
+<div class="lg:col-span-4 space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="text-sm font-semibold text-slate-custom uppercase tracking-wider">Recent Activity</h4>
+<button class="text-xs font-medium text-primary hover:underline">View All</button>
+</div>
+<div class="border border-border-custom rounded bg-white overflow-hidden">
+<div class="divide-y divide-border-custom">
+<!-- Activity Item -->
+<div class="p-4 hover:bg-gray-light/50 transition-colors">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-slate-500">add_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm text-slate-custom"><span class="font-semibold">TechCorp</span> added 12 new scribes.</p>
+<span class="text-[11px] text-slate-400">2 minutes ago</span>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="p-4 hover:bg-gray-light/50 transition-colors">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-emerald-600">done_all</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm text-slate-custom"><span class="font-semibold">System</span> audit completed for Q3.</p>
+<span class="text-[11px] text-slate-400">45 minutes ago</span>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="p-4 hover:bg-gray-light/50 transition-colors">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-rose-600">warning</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm text-slate-custom">Latency spike detected in <span class="font-semibold">EU-West</span> node.</p>
+<span class="text-[11px] text-slate-400">1 hour ago</span>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="p-4 hover:bg-gray-light/50 transition-colors">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-slate-500">person_add</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm text-slate-custom"><span class="font-semibold">Global Logistics</span> joined the platform.</p>
+<span class="text-[11px] text-slate-400">3 hours ago</span>
+</div>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="p-4 hover:bg-gray-light/50 transition-colors">
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-slate-500">description</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm text-slate-custom"><span class="font-semibold">Admin</span> updated security policy v2.4.</p>
+<span class="text-[11px] text-slate-400">5 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- System Info Footer Card -->
+<div class="p-5 bg-slate-custom rounded text-white flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium text-slate-400 uppercase">Engine Status</span>
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-[10px] font-bold">LIVE</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400">CPU Usage</span>
+<span>24%</span>
+</div>
+<div class="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4"></div>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400">Memory Allocation</span>
+<span>58%</span>
+</div>
+<div class="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[58%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Attendee Directory &amp; Invitation Log - Organization Portal</title>
+<!-- Google Fonts: Inter for Corporate Precision -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ghost-white': '#F8FAFC',
+            'deep-slate': '#1E293B',
+            'steel-gray': '#64748B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'sharp': '2px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="global-resets">
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Removal of all shadows and gradients as per 'Corporate Precision' aesthetic */
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      background-image: none !important;
+    }
+  </style>
+<style data-purpose="table-precision">
+    .precision-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .precision-table th {
+      text-align: left;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: #64748B;
+      padding: 12px 16px;
+      border-bottom: 1px solid #1E293B;
+    }
+    .precision-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #F1F5F9;
+      font-size: 0.875rem;
+    }
+    .precision-table tr:hover {
+      background-color: #F8FAFC;
+    }
+  </style>
+</head>
+<body class="flex min-h-screen">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-ghost-white border-r border-slate-200 flex flex-col" data-purpose="sidebar-navigation">
+<div class="p-6 border-bottom border-slate-200">
+<h1 class="text-sm font-bold tracking-tight uppercase">OrgPortal</h1>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<!-- Navigation Items with simple black icons -->
+<a class="flex items-center px-3 py-2 text-sm font-medium text-deep-slate bg-white border border-slate-200 rounded-sharp" href="#">
+<svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Directory
+      </a>
+<a class="flex items-center px-3 py-2 text-sm font-medium text-steel-gray hover:text-deep-slate" href="#">
+<svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Meetings
+      </a>
+<a class="flex items-center px-3 py-2 text-sm font-medium text-steel-gray hover:text-deep-slate" href="#">
+<svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Reports
+      </a>
+<a class="flex items-center px-3 py-2 text-sm font-medium text-steel-gray hover:text-deep-slate" href="#">
+<svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Settings
+      </a>
+</nav>
+<div class="p-4 border-t border-slate-200">
+<div class="flex items-center">
+<div class="w-8 h-8 bg-deep-slate flex items-center justify-center text-white text-xs font-bold rounded-sharp">JD</div>
+<div class="ml-3">
+<p class="text-xs font-bold text-deep-slate">Jane Doe</p>
+<p class="text-[10px] text-steel-gray">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0" data-purpose="main-header">
+<div class="flex items-center flex-1 max-w-lg">
+<label class="sr-only" for="search-attendees">Search attendees</label>
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<svg class="w-4 h-4 text-steel-gray" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-slate-200 rounded-sharp bg-ghost-white text-sm focus:ring-0 focus:border-deep-slate transition-colors" id="search-attendees" placeholder="Search by name or email..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-deep-slate text-white text-xs font-bold px-4 py-2 rounded-sharp border border-deep-slate uppercase tracking-wider hover:bg-slate-800 transition-colors" type="button">
+          Bulk Invite
+        </button>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: MainContent -->
+<section class="p-8 overflow-y-auto" data-purpose="directory-container">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-deep-slate tracking-tight">Attendee Directory</h2>
+<p class="text-sm text-steel-gray mt-1">Manage organization members and track invitation status.</p>
+</div>
+<!-- Table Card Wrapper -->
+<div class="bg-white border border-slate-300 rounded-sharp overflow-hidden">
+<table class="precision-table" id="directory-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Last Meeting Joined</th>
+<th>Verification Status</th>
+</tr>
+</thead>
+<tbody>
+<!-- Row 1 -->
+<tr>
+<td class="font-medium">Alexander Wright</td>
+<td class="text-steel-gray">a.wright@corp-tech.com</td>
+<td>Oct 24, 2023 • 09:15 AM</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-black text-black rounded-sharp">Verified</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr>
+<td class="font-medium">Beatrice Thorne</td>
+<td class="text-steel-gray">b.thorne@corp-tech.com</td>
+<td>Oct 23, 2023 • 02:30 PM</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-steel-gray text-steel-gray rounded-sharp">Pending</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr>
+<td class="font-medium">Charles Montgomery</td>
+<td class="text-steel-gray">c.montgomery@corp-tech.com</td>
+<td>Oct 20, 2023 • 11:00 AM</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-black text-black rounded-sharp">Verified</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr>
+<td class="font-medium">Diana Prince</td>
+<td class="text-steel-gray">d.prince@corp-tech.com</td>
+<td class="text-slate-400 italic">Never joined</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-steel-gray text-steel-gray rounded-sharp">Pending</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr>
+<td class="font-medium">Edward Norton</td>
+<td class="text-steel-gray">e.norton@corp-tech.com</td>
+<td>Oct 25, 2023 • 08:45 AM</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-black text-black rounded-sharp">Verified</span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr>
+<td class="font-medium">Fiona Gallagher</td>
+<td class="text-steel-gray">f.gallagher@corp-tech.com</td>
+<td>Oct 18, 2023 • 04:20 PM</td>
+<td>
+<span class="inline-block px-2 py-0.5 text-[10px] font-bold uppercase border border-black text-black rounded-sharp">Verified</span>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Table Pagination Footer -->
+<div class="border-t border-slate-200 bg-ghost-white px-4 py-3 flex items-center justify-between">
+<div class="text-xs text-steel-gray">
+            Showing <span class="font-bold text-deep-slate">1-6</span> of <span class="font-bold text-deep-slate">142</span> results
+          </div>
+<div class="flex space-x-1">
+<button class="px-3 py-1 text-xs border border-slate-300 rounded-sharp bg-white hover:bg-slate-100 disabled:opacity-50">Prev</button>
+<button class="px-3 py-1 text-xs border border-deep-slate rounded-sharp bg-deep-slate text-white">1</button>
+<button class="px-3 py-1 text-xs border border-slate-300 rounded-sharp bg-white hover:bg-slate-100">2</button>
+<button class="px-3 py-1 text-xs border border-slate-300 rounded-sharp bg-white hover:bg-slate-100">3</button>
+<button class="px-3 py-1 text-xs border border-slate-300 rounded-sharp bg-white hover:bg-slate-100">Next</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MainContent -->
+</main>
+</body></html>

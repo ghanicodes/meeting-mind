@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Email</title>
+</head>
+
+<body>
+    <div
+        style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #e1e4e8; border-radius: 12px; padding: 20px;">
+        <h2 style="color: #4f46e5;">🚀 Invitation: {{meeting_title}}</h2>
+        <p>Hello! <strong>{{organizer_name}}</strong> invited you to a smart meeting.</p>
+
+        <p>To access the <strong>Live AI Transcription</strong> and the <strong>Meeting Link</strong>, please create
+            your account:</p>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{{app_url}}/signup"
+                style="background: #111827; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold;">Sign
+                Up to Join</a>
+        </div>
+
+        <div style="border-top: 1px solid #eee; padding-top: 15px;">
+            <p style="font-size: 14px; color: #4b5563;"><strong>Details:</strong> {{meeting_date}} at {{meeting_time}}
+            </p>
+            {{#if is_recurring}}
+            <p style="font-size: 13px; color: #d97706;">🔄 This is part of a recurring series.</p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+
+</html>

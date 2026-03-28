@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organization Profile &amp; Audit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "slate-custom": "#1E293B",
+                        "border-custom": "#E2E8F0",
+                        "sidebar-bg": "#F1F5F9"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "4px",
+                        "xl": "8px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-custom dark:text-slate-100 font-display">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-sidebar-bg dark:bg-slate-900 border-r border-border-custom dark:border-slate-800 flex flex-col">
+<div class="p-6 border-b border-border-custom dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined">corporate_fare</span>
+</div>
+<div>
+<h1 class="text-sm font-bold leading-none">Enterprise Admin</h1>
+<p class="text-xs text-slate-500 mt-1">System Control</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium bg-white dark:bg-slate-800 text-primary border border-border-custom dark:border-slate-700 rounded shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+                    Organization
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                    Scribe Registry
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+                    Audit Logs
+                </a>
+<div class="pt-4 pb-2 px-3">
+<p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">System</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="p-4 border-t border-border-custom dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700" data-alt="Profile picture of system administrator" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrmfY3NFtEqW-LdzYEFsUcvspEikRaJI6OepgHEn2gP0C0pE0qmpGVA4YSnzZy0YLOFW-4WlTZtHwi5yEN6widfmEC6QGvWM6mKXYfplWUs4vTgdAC-PBczzqgXCAA8FJKgFm-C_xaMfSxTPU8bcH-5YjfnLA5nIejUoVkVMcSFbzId2tG6dfhKeJJVEloaFRzOCdpjILY2y26tnwkINGWgKdmTyPs6599KPYc9FdADow-LSv_SRpvedFRt7bEjK-jPh8nVnw6SlYt'); background-size: cover;"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-semibold truncate">Alex Rivera</p>
+<p class="text-[10px] text-slate-500 truncate">admin@acme.corp</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-border-custom dark:border-slate-800 flex items-center justify-between px-8">
+<h2 class="text-lg font-semibold tracking-tight">Organization Profile &amp; Audit</h2>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-slate-50 dark:bg-slate-800 border-border-custom dark:border-slate-700 rounded text-sm w-64 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Search audit logs..." type="text"/>
+</div>
+<button class="size-8 flex items-center justify-center text-slate-500 hover:text-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8 space-y-6">
+<!-- Profile Header Card -->
+<div class="bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 p-6 rounded">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start gap-5">
+<div class="size-16 bg-slate-50 border border-border-custom flex items-center justify-center rounded">
+<img alt="Acme Corp Logo" class="size-12 object-contain" data-alt="Corporate minimalist logo for Acme Corp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXi7OwOWop984LaI9WsP8tGPCo71vTWUzGyJC3aBMBb6ta1_vD7yerZz-AC2CcG0nNqJAklcQKrFWVcnbc-JALU1tFR3k2qfoAkPOmYNHJLbYokX6_cLC3gQwV0UOA6SMYcFb3quMb8vZFD82Fx7tJHUa1dXL-c_QY3tR5WpKbQgc7dkSYmF75e8BZ3Pq4_H7tJnTZjRq90f7Q0sbLwaDd0IMhoShTIFLbL_mcKtwHgVWM4cC3ZBwpH5uRLfwrlDIhUoxaqp0An0BR"/>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Acme Corp</h3>
+<p class="text-sm text-slate-500 flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-xs">verified</span>
+                                    Enterprise Plan • ID: ORG-88291
+                                </p>
+<div class="flex gap-4 mt-3">
+<div class="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+<div class="size-2 rounded-full bg-green-500"></div> Active since Jan 2023
+                                    </div>
+<div class="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+<span class="material-symbols-outlined text-sm">location_on</span> North America Region
+                                    </div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 border border-border-custom text-sm font-semibold hover:bg-slate-50 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-500">edit</span> Edit Profile
+                            </button>
+<button class="px-4 py-2 border border-border-custom text-sm font-semibold hover:bg-red-50 hover:text-red-600 hover:border-red-200 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">block</span> Suspend
+                            </button>
+<button class="px-4 py-2 border border-border-custom text-sm font-semibold hover:bg-slate-50 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-slate-500">key</span> Reset Keys
+                            </button>
+</div>
+</div>
+</div>
+<!-- Billed Usage Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 p-6 rounded">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Total Scribes</p>
+<div class="flex items-baseline gap-2">
+<h4 class="text-2xl font-bold">128</h4>
+<span class="text-xs text-green-600 font-medium">+12 this month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 p-6 rounded">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Current Plan</p>
+<div class="flex items-baseline gap-2">
+<h4 class="text-2xl font-bold">Enterprise Plus</h4>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 p-6 rounded">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Monthly Spend</p>
+<div class="flex items-baseline gap-2">
+<h4 class="text-2xl font-bold">$4,250.00</h4>
+<span class="text-xs text-slate-400 font-medium">Next bill: Oct 01</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Activity Timeline -->
+<div class="xl:col-span-1 bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 rounded flex flex-col">
+<div class="p-4 border-b border-border-custom dark:border-slate-800 flex items-center justify-between">
+<h5 class="text-sm font-bold uppercase tracking-wider text-slate-500">Activity Timeline</h5>
+<button class="text-primary text-xs font-semibold">View All</button>
+</div>
+<div class="p-4 flex-1">
+<div class="space-y-6 relative before:absolute before:inset-y-0 before:left-[11px] before:w-px before:bg-slate-100 dark:before:bg-slate-800">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 size-[22px] rounded-full border border-border-custom bg-white dark:bg-slate-900 flex items-center justify-center z-10">
+<div class="size-2 rounded-full bg-primary"></div>
+</div>
+<p class="text-xs text-slate-400 font-medium">Today, 10:45 AM</p>
+<p class="text-sm font-semibold mt-0.5">Quarterly Review Meeting</p>
+<p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Scribe: David Chen
+                                    </p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 size-[22px] rounded-full border border-border-custom bg-white dark:bg-slate-900 flex items-center justify-center z-10">
+<div class="size-2 rounded-full bg-slate-300"></div>
+</div>
+<p class="text-xs text-slate-400 font-medium">Today, 09:15 AM</p>
+<p class="text-sm font-semibold mt-0.5">Engineering Sync</p>
+<p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Scribe: Sarah Jenkins
+                                    </p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 size-[22px] rounded-full border border-border-custom bg-white dark:bg-slate-900 flex items-center justify-center z-10">
+<div class="size-2 rounded-full bg-slate-300"></div>
+</div>
+<p class="text-xs text-slate-400 font-medium">Yesterday, 4:30 PM</p>
+<p class="text-sm font-semibold mt-0.5">Product Roadmap Discussion</p>
+<p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Scribe: Michael Wu
+                                    </p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 size-[22px] rounded-full border border-border-custom bg-white dark:bg-slate-900 flex items-center justify-center z-10">
+<div class="size-2 rounded-full bg-slate-300"></div>
+</div>
+<p class="text-xs text-slate-400 font-medium">Yesterday, 11:00 AM</p>
+<p class="text-sm font-semibold mt-0.5">Customer Feedback Session</p>
+<p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Scribe: Sarah Jenkins
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Scribe Registry -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 border border-border-custom dark:border-slate-800 rounded">
+<div class="p-4 border-b border-border-custom dark:border-slate-800 flex items-center justify-between">
+<h5 class="text-sm font-bold uppercase tracking-wider text-slate-500">Scribe Registry</h5>
+<div class="flex gap-2">
+<button class="p-1 border border-border-custom hover:bg-slate-50 rounded">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+<button class="px-3 py-1 bg-primary text-white text-xs font-bold rounded">Add Scribe</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-border-custom dark:border-slate-800">Scribe Name</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-border-custom dark:border-slate-800">Status</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-border-custom dark:border-slate-800">Last Active</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest border-b border-border-custom dark:border-slate-800 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-custom dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-600">SJ</div>
+<div>
+<p class="text-sm font-semibold">Sarah Jenkins</p>
+<p class="text-[10px] text-slate-500">s.jenkins@acme.corp</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-50 text-green-700 border border-green-200">ACTIVE</span>
+</td>
+<td class="px-6 py-4 text-xs font-medium text-slate-600">22 mins ago</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-slate-600">more_vert</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-600">DC</div>
+<div>
+<p class="text-sm font-semibold">David Chen</p>
+<p class="text-[10px] text-slate-500">d.chen@acme.corp</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-green-50 text-green-700 border border-green-200">ACTIVE</span>
+</td>
+<td class="px-6 py-4 text-xs font-medium text-slate-600">1 hour ago</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-slate-600">more_vert</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-600">MW</div>
+<div>
+<p class="text-sm font-semibold">Michael Wu</p>
+<p class="text-[10px] text-slate-500">m.wu@acme.corp</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 border border-slate-200">OFFLINE</span>
+</td>
+<td class="px-6 py-4 text-xs font-medium text-slate-600">Yesterday</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-slate-600">more_vert</button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xs font-bold text-slate-600">AR</div>
+<div>
+<p class="text-sm font-semibold">Anita Ray</p>
+<p class="text-[10px] text-slate-500">a.ray@acme.corp</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-700 border border-red-200">PENDING</span>
+</td>
+<td class="px-6 py-4 text-xs font-medium text-slate-600">N/A</td>
+<td class="px-6 py-4 text-right">
+<button class="material-symbols-outlined text-slate-400 hover:text-slate-600">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-border-custom dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500">Showing 4 of 128 scribes</p>
+<div class="flex gap-1">
+<button class="px-2 py-1 border border-border-custom rounded disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-2 py-1 border border-border-custom rounded hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Scribe Canvas - Precision Workspace</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+    }
+  </style>
+<style data-purpose="grid-layout">
+    /* Subtle 1px dotted grid background */
+    .dotted-grid {
+      background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    .sidebar-width {
+      width: 320px;
+    }
+
+    .card-border-selected {
+      border: 2px solid #1E293B;
+    }
+
+    .card-border-normal {
+      border: 1px solid #1E293B;
+    }
+    
+    .sticky-note {
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden text-[#1E293B]">
+<!-- BEGIN: MainHeader -->
+<header class="h-14 bg-[#1E293B] flex items-center px-6 shrink-0 z-20">
+<div class="flex items-center space-x-4 w-full">
+<span class="text-white text-sm font-semibold tracking-wide uppercase">Current Topic:</span>
+<input class="bg-transparent border-none text-white font-medium p-0 focus:ring-0 w-full max-w-2xl text-base" data-purpose="topic-input" placeholder="Enter topic..." type="text" value="Q4 Infrastructure &amp; API Strategy"/>
+</div>
+<div class="flex items-center space-x-4 ml-auto">
+<div class="flex items-center space-x-2">
+<div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+<span class="text-white text-xs font-medium uppercase tracking-widest">Live Recording</span>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: LayoutWrapper -->
+<main class="flex flex-1 overflow-hidden">
+<!-- BEGIN: CentralArea -->
+<section class="flex-1 relative overflow-auto dotted-grid p-12" data-purpose="canvas-workspace">
+<!-- Participant Card 1 (Selected/Speaking) -->
+<div class="absolute top-10 left-10 w-[340px] bg-white rounded-[2px] card-border-selected shadow-sm p-4 z-10" data-purpose="participant-card-active" style="border-color: #f97316;">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center space-x-3">
+<div class="relative">
+<img alt="Sarah Jenkins" class="w-12 h-12 rounded-[2px] object-cover border border-slate-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdBBhEvhgu2oNlEtW7pdZAoUE8tN_88neFhEgqMx1wPALrpehofUD7ICRkmyrPlWeznr6j_99l2e6UlF41-RwN3EIzzz4tFO2fZfJwO8BjUfNLBAg_XJJUPPlvin0lvQh0l2bpzgAcKxijfKrPX1hH395pqx-WoosoQ4QvHziH533nFtXQCUDiHQlyIaheQ5gprqjkg9XTSDymKAYIVWEK8ajb2aCEUi0yn93aq-sRTj7JpCJUrgqRVSebQGdiySzLXCM7B45OjYed"/>
+<span class="absolute -bottom-1 -right-1 bg-[#f97316] text-[10px] text-white px-1 font-bold rounded-[1px]">LIVE</span>
+</div>
+<div>
+<h3 class="font-bold text-sm">Sarah Jenkins</h3>
+<div class="flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#f97316]"></span>
+<span class="text-[10px] font-bold text-[#f97316] uppercase tracking-tighter">Speaking</span>
+</div>
+</div>
+</div>
+<svg class="h-4 w-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="bg-slate-50 border border-slate-100 p-3 rounded-[2px] mb-4">
+<p class="text-xs italic text-slate-600 leading-relaxed">
+            "We need to consolidate the Q4 targets before the investor call next Tuesday..."
+          </p>
+</div>
+<div class="border-t border-slate-100 pt-3">
+<div class="flex items-center space-x-2 mb-2">
+<svg class="h-3 w-3 text-slate-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" fill-rule="evenodd"></path>
+</svg>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Scribe Typing</span>
+</div>
+<p class="text-xs text-slate-500">Continue typing notes...</p>
+</div>
+</div>
+<!-- Participant Card 2 (Quiet) -->
+<div class="absolute top-20 left-[450px] w-[260px] bg-white rounded-[2px] shadow-md p-3 flex items-center space-x-3 border border-slate-200" data-purpose="participant-card-inactive">
+<img alt="Mark Thompson" class="w-10 h-10 rounded-[2px] object-cover border border-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWkZccuLVvI6hSqlDF5CU5JnfSU002Zaq5EzWziBU-FqnUOzjUOfQCmB3A7BwoCWqmLM4j--2rXeFDmDgcHKYlhek5MBrp4ntieL5fAXL_GNIv6tuwC-HRSWJi03aU-VV_i1N4GKUJfVOEB8kJJCV81MP9odMx4W5Rb7KkwQEVsMQnnosoh043mxRA1GJw_vM2MiHNlW57n35qjP0u2h8o-qlbP8Bjh_7P9k120SbuWSUzoFXxIiqZpX4q7GZxQIVDNBTlZiO7Y8_u"/>
+<div class="flex-1">
+<h3 class="font-bold text-xs">Mark Thompson</h3>
+<p class="text-[10px] italic text-slate-400">Listening...</p>
+</div>
+<svg class="h-3 w-3 text-slate-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Sticky Note 1 -->
+<div class="absolute top-80 left-48 w-48 h-48 bg-[#FFF28F] p-4 flex flex-col justify-between sticky-note" data-purpose="canvas-note">
+<p class="text-[11px] font-semibold text-slate-800 leading-snug">
+          Review API limits for high-traffic endpoints during Q4 peak.
+        </p>
+<div class="flex justify-between items-center text-[9px] font-bold text-slate-500">
+<span>#TECH-DEBT</span>
+<span>10:02 AM</span>
+</div>
+</div>
+<!-- Sticky Note 2 -->
+<div class="absolute top-[420px] left-96 w-48 h-48 bg-[#FFF28F] p-4 flex flex-col justify-between sticky-note" data-purpose="canvas-note">
+<p class="text-[11px] font-semibold text-slate-800 leading-snug">
+          Sprint blockers identified in the checkout flow rewrite.
+        </p>
+<div class="flex justify-between items-center text-[9px] font-bold text-slate-500">
+<span>#URGENT</span>
+<span>10:05 AM</span>
+</div>
+</div>
+</section>
+<!-- END: CentralArea -->
+<!-- BEGIN: Sidebar -->
+<aside class="sidebar-width bg-white border-l border-slate-200 flex flex-col z-10" data-purpose="transcription-sidebar">
+<div class="p-4 border-b border-slate-100">
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Live Transcription</h2>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- Log Entry 1 -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<span class="text-[10px] font-bold text-slate-800">SARAH JENKINS</span>
+<span class="text-[10px] text-slate-400">10:01 AM</span>
+</div>
+<p class="text-xs leading-relaxed text-slate-600">
+            I've been looking at the current velocity metrics. We're seeing a slight lag in the API gateway response times.
+          </p>
+</div>
+<!-- Log Entry 2 -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<span class="text-[10px] font-bold text-slate-800">MARK THOMPSON</span>
+<span class="text-[10px] text-slate-400">10:03 AM</span>
+</div>
+<p class="text-xs leading-relaxed text-slate-600">
+            Is that related to the new rate-limiting logic we pushed yesterday?
+          </p>
+</div>
+<!-- Log Entry 3 -->
+<div class="space-y-1">
+<div class="flex justify-between">
+<span class="text-[10px] font-bold text-slate-800">SARAH JENKINS</span>
+<span class="text-[10px] text-slate-400">10:04 AM</span>
+</div>
+<p class="text-xs leading-relaxed text-slate-600">
+            Potentially. We need to consolidate the Q4 targets before the investor call next Tuesday so we can present a clear roadmap.
+          </p>
+</div>
+</div>
+<!-- Sidebar Typing Area -->
+<div class="p-4 border-t border-slate-200 bg-slate-50">
+<div class="mb-2 flex items-center justify-between">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400" for="manual-scribe">Scribe Input</label>
+<span class="text-[10px] text-slate-400">Autosaving...</span>
+</div>
+<textarea class="w-full text-xs p-3 rounded-[2px] border border-slate-200 focus:ring-1 focus:ring-slate-400 focus:border-slate-400 resize-none" id="manual-scribe" placeholder="Add internal notes or override transcription..." rows="4"></textarea>
+<button class="mt-3 w-full bg-[#1E293B] text-white text-[10px] font-bold py-2 uppercase tracking-widest hover:bg-slate-700 transition-colors">
+          Push to Canvas
+        </button>
+</div>
+</aside>
+<!-- END: Sidebar -->
+</main>
+<!-- END: LayoutWrapper -->
+</body></html>

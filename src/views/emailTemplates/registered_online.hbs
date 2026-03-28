@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitaton Email</title>
+</head>
+
+<body>
+    <div
+        style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #e1e4e8; border-radius: 12px; padding: 20px;">
+        <h2 style="color: #4f46e5;">📅 Meeting Joined: {{meeting_title}}</h2>
+        <p>Hi <strong>{{user_name}}</strong>, you're all set for this online session.</p>
+
+        <div style="background: #f9fafb; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>Time:</strong> {{meeting_date}} at {{meeting_time}}</p>
+            <p><strong>Role:</strong> {{meeting_role}}</p>
+        </div>
+
+        {{#if is_recurring}}
+        <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 10px; margin-bottom: 20px;">
+            <p style="margin:0; font-size: 14px;">🔄 <strong>Recurring:</strong> {{recurring_detail}}</p>
+        </div>
+        {{/if}}
+
+        <div style="text-align: center;">
+            <a href="{{meeting_link}}"
+                style="background: #4f46e5; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Join
+                Meeting Now</a>
+        </div>
+    </div>
+</body>
+
+</html>

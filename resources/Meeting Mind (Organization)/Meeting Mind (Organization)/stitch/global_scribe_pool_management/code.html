@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Scribe Pool Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1E293B",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#101622",
+                        "slate-text": "#1E293B",
+                        "steel-gray": "#64748B",
+                        "border-gray": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .no-shadow {
+            box-shadow: none !important;
+        }
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-text dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-border-gray bg-white dark:bg-background-dark flex flex-col">
+<div class="p-6 border-b border-border-gray">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white text-xl">edit_note</span>
+</div>
+<div>
+<h1 class="text-sm font-bold uppercase tracking-wider text-slate-text">Scribe Pool</h1>
+<p class="text-[10px] text-steel-gray font-medium uppercase tracking-tight">Admin Console</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium bg-background-light text-primary border border-border-gray" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-steel-gray hover:bg-background-light hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+                    Scribe Pool
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-steel-gray hover:bg-background-light hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+                    Meetings
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-steel-gray hover:bg-background-light hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                    Analytics
+                </a>
+<div class="pt-4 mt-4 border-t border-border-gray">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-steel-gray hover:bg-background-light hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                        Settings
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-steel-gray hover:bg-background-light hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                        Support
+                    </a>
+</div>
+</nav>
+<div class="p-4 border-t border-border-gray">
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 bg-border-gray rounded-full overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Corporate headshot of the administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVY2fFcEXCBX4D53LGZ_2DEZXjwXSKzrDyWoN-2Kh5KFE4c9vTWPP6sNWt19Vnq2-2si-aut-2kAgxOnLe0kVKWhfdTmFNSjfJQ290qqKIWy1virmt8gXVk5805mCDfIZg298JS_g66ZT6y_wYh7YqYTvs_CcKCt2StZ9EygSZC0Uf0uUxGxqXFvFKWCni91IZIcfMxLpbUm-cb2MhFFYrHLcVASMVLmsJ8B1Ar5zPeGTl1NJt7pfK_oYBn8hDJSHFWrv7u3lCYjbv"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-semibold truncate">Admin User</p>
+<p class="text-[10px] text-steel-gray truncate">admin@scribe.io</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-border-gray bg-white dark:bg-background-dark flex items-center justify-between px-8">
+<div class="flex items-center gap-2">
+<span class="text-steel-gray text-sm">Global Scribe Pool Management</span>
+<span class="material-symbols-outlined text-border-gray text-lg">chevron_right</span>
+<span class="text-slate-text font-semibold text-sm">Overview</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-steel-gray text-lg">search</span>
+<input class="pl-10 pr-4 py-1.5 text-xs bg-background-light border border-border-gray focus:ring-0 focus:border-steel-gray w-64 rounded" placeholder="Search scribe registry..." type="text"/>
+</div>
+<button class="px-4 py-1.5 border border-primary text-primary text-xs font-semibold uppercase tracking-wide hover:bg-primary hover:text-white transition-colors">
+                        Register New Scribe
+                    </button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-auto p-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h2 class="text-2xl font-bold text-slate-text tracking-tight">Scribe Directory</h2>
+<p class="text-steel-gray text-sm mt-1">Manage and monitor active scribe status across global pools.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-border-gray text-xs font-medium bg-white text-steel-gray">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                            </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-border-gray text-xs font-medium bg-white text-steel-gray">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                            </button>
+</div>
+</div>
+<!-- Table Section -->
+<div class="border border-border-gray bg-white dark:bg-slate-900 overflow-hidden">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-border-gray bg-background-light dark:bg-slate-800">
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-steel-gray border-r border-border-gray">Scribe Name</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-steel-gray border-r border-border-gray">Email</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-steel-gray border-r border-border-gray">Expertise/Topic</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-steel-gray border-r border-border-gray">Total Meetings Transcribed</th>
+<th class="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-steel-gray">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-gray">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Eleanor Shellstrop</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">eleanor@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Legal &amp; Compliance</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">1,420</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-steel-gray"></div>
+<span class="text-[11px] uppercase font-medium text-steel-gray">Online</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Chidi Anagonye</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">chidi@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Ethics &amp; Philosophy</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">892</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-border-gray"></div>
+<span class="text-[11px] uppercase font-medium text-border-gray">Busy</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Tahani Al-Jamil</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">tahani@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Event Logistics</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">2,154</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-steel-gray"></div>
+<span class="text-[11px] uppercase font-medium text-steel-gray">Online</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Jason Mendoza</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">jason@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Media &amp; Arts</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">567</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-steel-gray"></div>
+<span class="text-[11px] uppercase font-medium text-steel-gray">Online</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Michael Realman</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">michael@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Corporate Strategy</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">4,501</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-border-gray"></div>
+<span class="text-[11px] uppercase font-medium text-border-gray">Busy</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<td class="px-6 py-4 text-sm font-semibold text-slate-text border-r border-border-gray">Janet Sims</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">janet@scribe.io</td>
+<td class="px-6 py-4 text-sm border-r border-border-gray">
+<span class="px-2 py-0.5 border border-border-gray text-[10px] font-medium uppercase text-steel-gray">Information Systems</span>
+</td>
+<td class="px-6 py-4 text-sm text-steel-gray border-r border-border-gray">12,492</td>
+<td class="px-6 py-4 text-sm">
+<div class="flex items-center gap-2">
+<div class="size-1.5 rounded-full bg-steel-gray"></div>
+<span class="text-[11px] uppercase font-medium text-steel-gray">Online</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-border-gray bg-background-light">
+<span class="text-xs text-steel-gray font-medium">Showing 1 to 6 of 152 records</span>
+<div class="flex items-center gap-1">
+<button class="p-1 border border-border-gray bg-white text-steel-gray hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="px-3 py-1 border border-primary bg-primary text-white text-[11px] font-bold">1</button>
+<button class="px-3 py-1 border border-border-gray bg-white text-steel-gray text-[11px] font-medium hover:bg-slate-50">2</button>
+<button class="px-3 py-1 border border-border-gray bg-white text-steel-gray text-[11px] font-medium hover:bg-slate-50">3</button>
+<button class="p-1 border border-border-gray bg-white text-steel-gray hover:bg-slate-50">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

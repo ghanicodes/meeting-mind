@@ -1,0 +1,56 @@
+import express from 'express';
+import { createServer } from 'http';           // ← naya
+import { Server } from 'socket.io';            // ← naya
+import { initSocket } from './socket/socketManager.js'; // ← naya
+// import { initAttendanceWorker } from './utils/attendanceQueue.js';
+
+import connectDb from './config/connectDb.js';
+import dns from 'node:dns';
+import authRoutes from './routers/authRoutes.js';
+dns.setServers(['1.1.1.1', '8.8.8.8']);
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+
+// Routers (same as before — kuch nahi badla)
+import meetingRouter from './routers/meetingRouter.js';
+import notesRouter from './routers/notesRouter.js';
+import disputeRouter from './routers/disputeRouter.js';
+import organizationRouter from './routers/organization.js';
+import anonymousRouter from './routers/Anonymous.js';
+
+
+const app = express();
+const httpServer = createServer(app);           // ← naya
+const io = new Server(httpServer, {             // ← naya
+    cors: {
+        origin: true,
+        credentials: true
+    }
+});
+
+const PORT = process.env.PORT;
+
+app.use(cors({ origin: true, credentials: true }));
+app.use(express.json());
+app.use(cookieParser());
+
+app.use('/auth', authRoutes);
+app.use('/meetings', meetingRouter);
+app.use('/notes', notesRouter);
+app.use('/dispute', disputeRouter);
+app.use('/organizations', organizationRouter);
+app.use('/anonymous', anonymousRouter);
+
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
+
+connectDb()
+    .then(() => {
+        console.log("MongoDb connected");
+
+        initSocket(io);                             // ← naya: socket events register karo
+        httpServer.listen(PORT, () => {             // ← app.listen → httpServer.listen
+            console.log(`Server is running at http://localhost:${PORT}`);
+        });
+    });

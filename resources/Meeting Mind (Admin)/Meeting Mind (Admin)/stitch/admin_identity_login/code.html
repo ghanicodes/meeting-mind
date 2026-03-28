@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1E293B",
+                "background-light": "#ffffff",
+                "background-dark": "#101622",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "2px", "lg": "2px", "xl": "2px", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4">
+<div class="w-full max-w-[440px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded shadow-sm overflow-hidden">
+<div class="pt-10 pb-6 flex flex-col items-center gap-4">
+<div class="w-12 h-12 bg-slate-900 dark:bg-slate-100 flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white dark:text-slate-900 text-3xl" data-icon="mindfulness">mindfulness</span>
+</div>
+<div class="text-center">
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase">Meeting Mind</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium tracking-widest uppercase mt-1">Admin Portal</p>
+</div>
+</div>
+<div class="px-8 pb-10 flex flex-col gap-6">
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-600 dark:text-slate-400 text-sm font-semibold tracking-tight">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="mail">mail</span>
+<input class="w-full h-12 pl-10 pr-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded focus:ring-1 focus:ring-primary focus:border-primary text-slate-900 dark:text-white placeholder:text-slate-400 text-sm" placeholder="admin@meetingmind.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="text-slate-600 dark:text-slate-400 text-sm font-semibold tracking-tight">Password</label>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="lock">lock</span>
+<input class="w-full h-12 pl-10 pr-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded focus:ring-1 focus:ring-primary focus:border-primary text-slate-900 dark:text-white placeholder:text-slate-400 text-sm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-4 h-4 rounded-sm border-slate-300 text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="text-xs text-slate-600 dark:text-slate-400" for="remember">Keep me logged in</label>
+</div>
+<button class="w-full h-12 bg-primary hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white text-white font-bold text-sm tracking-widest uppercase transition-all flex items-center justify-center gap-2 rounded">
+<span>Login</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="relative py-2">
+<div class="absolute inset-0 flex items-center">
+<span class="w-full border-t border-slate-100 dark:border-slate-800"></span>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-white dark:bg-slate-900 px-2 text-slate-400">Restricted Access</span>
+</div>
+</div>
+<p class="text-center text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+                © 2024 Meeting Mind Systems
+            </p>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 w-full h-1 bg-primary"></div>
+</body></html>

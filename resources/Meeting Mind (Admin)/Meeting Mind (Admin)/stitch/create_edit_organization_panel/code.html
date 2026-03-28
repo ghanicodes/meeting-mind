@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1E293B",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101622",
+                        "border-gray": "#E2E8F0",
+                        "slate-text": "#1E293B",
+                        "slate-muted": "#64748B",
+                        "bg-gray-light": "#F1F5F9"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .form-input:focus {
+            border-color: #1E293B !important;
+            ring: 0 !important;
+            outline: none !important;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-text font-display">
+<div class="relative flex h-auto min-screen w-full flex-col bg-background-light group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-border-gray px-6 md:px-20 py-4 bg-white">
+<div class="flex items-center gap-3 text-primary">
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+</div>
+<h2 class="text-primary text-lg font-bold leading-tight tracking-tight">Admin Portal</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="flex gap-3">
+<button class="flex cursor-pointer items-center justify-center rounded border border-border-gray h-10 w-10 bg-white hover:bg-bg-gray-light transition-colors">
+<span class="material-symbols-outlined text-slate-text text-[20px]">notifications</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded border border-border-gray h-10 w-10 bg-white hover:bg-bg-gray-light transition-colors">
+<span class="material-symbols-outlined text-slate-text text-[20px]">account_circle</span>
+</button>
+</div>
+<div class="bg-bg-gray-light border border-border-gray rounded-full size-10 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User avatar profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeDluHp0Y0Xyn6ISEm0EjaFvCot9yZ0G_ZlMkF0wAxKudxfd42YhXBzCBEdRTfC5EmAjxq8BzkIC7lQ-7EGbO0rBTR0vE6u5lheyOOAAonlj9FMS2yDZd-ji3mMWL13zskm1rNjB5lUSD3KmD2d73LPaJL0QPRdFA2FxVwMYBBy_H2T-MNWVT4QUHkE5lSO3G9SZEj16Aa2daaQYce3GwhnGjCkQ7JQfkhhKFqAgNMLpWmpitb2VcAzjSRRz7wGBLvI3tLpbJk_Ebe"/>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-12 px-6">
+<div class="layout-content-container flex flex-col w-full max-w-[800px] flex-1">
+<!-- Page Title -->
+<div class="flex flex-col gap-2 mb-10">
+<h1 class="text-slate-text text-3xl font-bold tracking-tight">Create Organization</h1>
+<p class="text-slate-muted text-base">Initialize a new secure workspace and define core administrative parameters.</p>
+</div>
+<!-- Stepper -->
+<div class="mb-12">
+<div class="flex items-center justify-between w-full relative">
+<!-- Connector Lines -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-border-gray -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-3 bg-white pr-4">
+<div class="w-10 h-10 rounded border-2 border-primary bg-primary flex items-center justify-center text-white text-sm font-bold">1</div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Basic Info</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-3 bg-white px-4">
+<div class="w-10 h-10 rounded border border-border-gray bg-white flex items-center justify-center text-slate-muted text-sm font-bold">2</div>
+<span class="text-slate-muted text-xs font-semibold uppercase tracking-wider">Access Config</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-3 bg-white pl-4">
+<div class="w-10 h-10 rounded border border-border-gray bg-white flex items-center justify-center text-slate-muted text-sm font-bold">3</div>
+<span class="text-slate-muted text-xs font-semibold uppercase tracking-wider">Final Review</span>
+</div>
+</div>
+</div>
+<!-- Form Section -->
+<div class="bg-white border border-border-gray p-8 flex flex-col gap-8">
+<h3 class="text-slate-text text-xl font-bold tracking-tight border-b border-border-gray pb-4">Organization Details</h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- Input Group 1 -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-text text-sm font-semibold">Legal Entity Name</label>
+<input class="form-input w-full rounded border border-border-gray bg-bg-gray-light px-4 py-3 text-slate-text placeholder:text-slate-muted text-sm focus:bg-white transition-all" placeholder="e.g. Acme Corp International" type="text"/>
+<p class="text-slate-muted text-[11px]">This name will appear on all legal documentation and invoices.</p>
+</div>
+<!-- Input Group 2 -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-text text-sm font-semibold">Domain</label>
+<div class="flex">
+<span class="inline-flex items-center px-4 rounded-l border border-r-0 border-border-gray bg-white text-slate-muted text-sm">https://</span>
+<input class="form-input flex-1 rounded-r border border-border-gray bg-bg-gray-light px-4 py-3 text-slate-text placeholder:text-slate-muted text-sm focus:bg-white transition-all" placeholder="company.com" type="text"/>
+</div>
+<p class="text-slate-muted text-[11px]">Used for automated user provisioning and SSO configuration.</p>
+</div>
+<!-- Input Group 3 -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-text text-sm font-semibold">Primary Admin Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-muted text-[18px]">mail</span>
+<input class="form-input w-full rounded border border-border-gray bg-bg-gray-light pl-12 pr-4 py-3 text-slate-text placeholder:text-slate-muted text-sm focus:bg-white transition-all" placeholder="admin@company.com" type="email"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8 flex items-center justify-between">
+<button class="px-6 py-3 rounded border border-border-gray text-slate-text text-sm font-semibold hover:bg-bg-gray-light transition-colors">
+                        Save as Draft
+                    </button>
+<div class="flex gap-4">
+<button class="px-8 py-3 rounded bg-primary text-white text-sm font-bold tracking-wide hover:opacity-90 transition-opacity">
+                            Complete Onboarding
+                        </button>
+</div>
+</div>
+<!-- Help Footer -->
+<div class="mt-16 flex items-center justify-center gap-8 border-t border-border-gray pt-8">
+<div class="flex items-center gap-2 text-slate-muted">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-xs">Support Docs</span>
+</div>
+<div class="flex items-center gap-2 text-slate-muted">
+<span class="material-symbols-outlined text-sm">security</span>
+<span class="text-xs">Data Security Policy</span>
+</div>
+<div class="flex items-center gap-2 text-slate-muted">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+<span class="text-xs">Live Assistance</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

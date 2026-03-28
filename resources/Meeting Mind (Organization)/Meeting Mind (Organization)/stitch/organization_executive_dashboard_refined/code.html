@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meeting Mind Executive Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "slate-custom": "#1E293B",
+                        "slate-secondary": "#64748B",
+                        "border-gray": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .no-shadow { box-shadow: none !important; }
+    </style>
+</head>
+<body class="bg-white text-slate-custom font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 bg-[#F1F5F9] border-r border-border-gray flex flex-col">
+<div class="p-6 border-b border-border-gray flex items-center gap-3">
+<div class="w-8 h-8 bg-slate-custom rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">mindfulness</span>
+</div>
+<div>
+<h1 class="text-slate-custom text-sm font-bold leading-none">Meeting Mind</h1>
+<p class="text-slate-secondary text-[10px] uppercase tracking-wider mt-1">Executive Portal</p>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-white border border-border-gray text-slate-custom rounded no-shadow" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-secondary hover:bg-white/50 transition-colors rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-sm font-medium">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-secondary hover:bg-white/50 transition-colors rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="text-sm font-medium">Scribes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-secondary hover:bg-white/50 transition-colors rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-secondary hover:bg-white/50 transition-colors rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Organization</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-gray">
+<div class="flex items-center gap-3 p-2">
+<div class="w-8 h-8 rounded-full bg-slate-200" data-alt="User profile avatar circle"></div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-custom">Alex Rivera</span>
+<span class="text-[10px] text-slate-secondary">Admin Access</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-hidden bg-white">
+<!-- Header -->
+<header class="h-16 border-b border-border-gray flex items-center justify-between px-8 shrink-0">
+<h2 class="text-lg font-bold tracking-tight text-slate-custom uppercase text-xs">Organization Overview</h2>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 border border-border-gray text-xs font-bold uppercase tracking-widest text-slate-custom hover:bg-slate-50">
+                        Export Data
+                    </button>
+<button class="px-4 py-2 bg-primary text-white text-xs font-bold uppercase tracking-widest hover:opacity-90">
+                        New Session
+                    </button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Primary Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 border border-border-gray bg-white flex flex-col gap-2">
+<p class="text-slate-secondary text-[11px] font-bold uppercase tracking-wider">Upcoming Today</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-slate-custom tracking-tighter">12</p>
+<span class="text-[10px] text-green-600 font-bold">+2 vs yesterday</span>
+</div>
+</div>
+<div class="p-6 border border-border-gray bg-white flex flex-col gap-2">
+<p class="text-slate-secondary text-[11px] font-bold uppercase tracking-wider">Total Scribes Active</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-slate-custom tracking-tighter">48</p>
+<span class="text-[10px] text-slate-secondary font-bold">86% capacity</span>
+</div>
+</div>
+<div class="p-6 border border-border-gray bg-white flex flex-col gap-2">
+<p class="text-slate-secondary text-[11px] font-bold uppercase tracking-wider">Remaining Monthly Meetings</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-slate-custom tracking-tighter">124</p>
+<span class="text-[10px] text-slate-secondary font-bold">Renew in 12 days</span>
+</div>
+</div>
+<div class="p-6 border border-border-gray bg-white flex flex-col gap-2">
+<p class="text-slate-secondary text-[11px] font-bold uppercase tracking-wider">Latest Feedback Score</p>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold text-slate-custom tracking-tighter">4.9<span class="text-lg text-slate-secondary">/5</span></p>
+<span class="material-symbols-outlined text-primary text-sm font-bold">star</span>
+</div>
+</div>
+</div>
+<!-- Active Sessions List -->
+<div class="border border-border-gray">
+<div class="px-6 py-4 border-b border-border-gray bg-slate-50 flex items-center justify-between">
+<h3 class="text-[11px] font-bold uppercase tracking-widest text-slate-custom">Today's Active Sessions</h3>
+<span class="text-[10px] text-slate-secondary font-medium">Real-time update</span>
+</div>
+<div class="divide-y divide-border-gray">
+<!-- Session Row 1 -->
+<div class="flex items-center justify-between p-6 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-6">
+<div class="w-10 h-10 border border-border-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-custom">videocam</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-custom">Quarterly Financial Review</h4>
+<p class="text-xs text-slate-secondary mt-1">Scribe: Sarah Jenkins • 8 Attendees</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Duration</p>
+<p class="text-xs font-medium text-slate-custom">00:42:15</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 border border-green-200 bg-green-50">
+<span class="size-2 rounded-full bg-green-600 animate-pulse"></span>
+<span class="text-[10px] font-bold text-green-700 uppercase">Live</span>
+</div>
+</div>
+</div>
+<!-- Session Row 2 -->
+<div class="flex items-center justify-between p-6 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-6">
+<div class="w-10 h-10 border border-border-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-custom">groups</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-custom">Product Strategy Sync</h4>
+<p class="text-xs text-slate-secondary mt-1">Scribe: Michael Chen • 5 Attendees</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Starts In</p>
+<p class="text-xs font-medium text-slate-custom">15 minutes</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 border border-amber-200 bg-amber-50">
+<span class="size-2 rounded-full bg-amber-500"></span>
+<span class="text-[10px] font-bold text-amber-700 uppercase">Starting Soon</span>
+</div>
+</div>
+</div>
+<!-- Session Row 3 -->
+<div class="flex items-center justify-between p-6 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-6">
+<div class="w-10 h-10 border border-border-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-custom">campaign</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-custom">Internal Town Hall - Q3</h4>
+<p class="text-xs text-slate-secondary mt-1">Scribe: Emily Watson • 124 Attendees</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Duration</p>
+<p class="text-xs font-medium text-slate-custom">01:15:00</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 border border-green-200 bg-green-50">
+<span class="size-2 rounded-full bg-green-600 animate-pulse"></span>
+<span class="text-[10px] font-bold text-green-700 uppercase">Live</span>
+</div>
+</div>
+</div>
+<!-- Session Row 4 -->
+<div class="flex items-center justify-between p-6 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-6">
+<div class="w-10 h-10 border border-border-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-custom">engineering</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-custom">System Architecture Review</h4>
+<p class="text-xs text-slate-secondary mt-1">Scribe: David Miller • 12 Attendees</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Starts In</p>
+<p class="text-xs font-medium text-slate-custom">45 minutes</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 border border-amber-200 bg-amber-50">
+<span class="size-2 rounded-full bg-amber-500"></span>
+<span class="text-[10px] font-bold text-amber-700 uppercase">Starting Soon</span>
+</div>
+</div>
+</div>
+<!-- Session Row 5 -->
+<div class="flex items-center justify-between p-6 hover:bg-slate-50 transition-colors">
+<div class="flex items-center gap-6">
+<div class="w-10 h-10 border border-border-gray flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-custom">handshake</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-custom">Client Onboarding: TechCorp</h4>
+<p class="text-xs text-slate-secondary mt-1">Scribe: Sarah Jenkins • 4 Attendees</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Duration</p>
+<p class="text-xs font-medium text-slate-custom">00:08:12</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 border border-green-200 bg-green-50">
+<span class="size-2 rounded-full bg-green-600 animate-pulse"></span>
+<span class="text-[10px] font-bold text-green-700 uppercase">Live</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+<div class="flex items-center gap-4 p-4 bg-slate-50 border border-border-gray">
+<span class="material-symbols-outlined text-slate-secondary">memory</span>
+<div>
+<p class="text-[10px] font-bold text-slate-secondary uppercase">AI Efficiency</p>
+<p class="text-sm font-bold text-slate-custom">94.2%</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-slate-50 border border-border-gray">
+<span class="material-symbols-outlined text-slate-secondary">verified</span>
+<div>
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Data Accuracy</p>
+<p class="text-sm font-bold text-slate-custom">99.8%</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-slate-50 border border-border-gray">
+<span class="material-symbols-outlined text-slate-secondary">lock</span>
+<div>
+<p class="text-[10px] font-bold text-slate-secondary uppercase">Compliance Status</p>
+<p class="text-sm font-bold text-slate-custom text-green-600">Secure</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

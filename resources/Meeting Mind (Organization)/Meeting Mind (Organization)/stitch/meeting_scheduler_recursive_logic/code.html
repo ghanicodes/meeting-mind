@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Meeting Scheduler</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Public+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#221610",
+                        "slate-custom": "#1e293b",
+                        "steel-gray": "#64748b",
+                        "border-gray": "#e2e8f0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .sharp-border { border: 1px solid #e2e8f0; }
+        .input-focus:focus { outline: none; border-color: #1e293b; ring: 0; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-custom dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Side Navigation -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-border-gray dark:border-slate-800 flex flex-col shrink-0">
+<div class="p-6 border-b border-border-gray dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">corporate_fare</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-custom dark:text-white text-sm font-bold leading-none">Enterprise Portal</h1>
+<p class="text-steel-gray text-xs mt-1">Org Admin</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-steel-gray hover:bg-slate-50 rounded group" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-100 dark:bg-slate-800 text-slate-custom dark:text-white rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-sm font-bold">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-steel-gray hover:bg-slate-50 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="text-sm font-medium">Participants</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-steel-gray hover:bg-slate-50 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-steel-gray hover:bg-slate-50 rounded" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-gray dark:border-slate-800">
+<div class="flex items-center gap-3 px-2">
+<div class="size-8 rounded-full bg-slate-200" data-alt="User profile avatar placeholder"></div>
+<div class="text-xs">
+<p class="font-bold">Alex Rivera</p>
+<p class="text-steel-gray">System Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 bg-white dark:bg-slate-900 border-b border-border-gray dark:border-slate-800 flex items-center justify-between px-8 shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-steel-gray text-sm">Meetings</span>
+<span class="material-symbols-outlined text-sm text-steel-gray">chevron_right</span>
+<span class="text-slate-custom dark:text-white text-sm font-bold">Schedule New Meeting</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-steel-gray hover:text-slate-custom"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-steel-gray hover:text-slate-custom"><span class="material-symbols-outlined">help</span></button>
+</div>
+</header>
+<!-- Scrollable Form Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-4xl mx-auto space-y-8">
+<!-- Title Section -->
+<div>
+<h2 class="text-2xl font-black text-slate-custom dark:text-white uppercase tracking-tight">Schedule New Meeting</h2>
+<p class="text-steel-gray mt-1 text-sm">Configure complex meeting details, participant recurrence, and global scribe assignment.</p>
+</div>
+<!-- Section 1: Meeting Details -->
+<section class="bg-white dark:bg-slate-900 sharp-border p-6">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-steel-gray">info</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-custom dark:text-white">Section 1: Meeting Details</h3>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Meeting Title</label>
+<input class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm input-focus" placeholder="e.g. Quarterly Strategic Alignment" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Meeting Objective</label>
+<textarea class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm min-h-[120px] input-focus" placeholder="Enter the primary goal or agenda of this meeting..."></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Location / Link</label>
+<input class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm input-focus" placeholder="Meeting Room A or Zoom Link" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Department</label>
+<select class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm input-focus">
+<option>Operations</option>
+<option>Engineering</option>
+<option>Marketing</option>
+<option>Finance</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Participants -->
+<section class="bg-white dark:bg-slate-900 sharp-border p-6">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-steel-gray">person_add</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-custom dark:text-white">Section 2: Participants</h3>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Global Scribe Selection</label>
+<div class="relative">
+<select class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm appearance-none input-focus">
+<option>Select an automated scribe...</option>
+<option>Scribe-AI Enterprise v2.4</option>
+<option>Manual Transcription Service</option>
+<option>Internal Executive Assistant</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-steel-gray pointer-events-none">expand_more</span>
+</div>
+<p class="text-[10px] text-steel-gray mt-1 italic">The scribe will handle automated minute-taking and action item extraction.</p>
+</div>
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Attendee Invitations</label>
+<div class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-2 flex flex-wrap gap-2 items-center min-h-[46px]">
+<div class="bg-slate-200 dark:bg-slate-700 text-slate-custom dark:text-white px-2 py-1 text-xs flex items-center gap-1 rounded-[2px]">
+<span>j.smith@enterprise.com</span>
+<button class="material-symbols-outlined text-[14px]">close</button>
+</div>
+<div class="bg-slate-200 dark:bg-slate-700 text-slate-custom dark:text-white px-2 py-1 text-xs flex items-center gap-1 rounded-[2px]">
+<span>board-admin@corp.org</span>
+<button class="material-symbols-outlined text-[14px]">close</button>
+</div>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-1 flex-1 min-w-[150px]" placeholder="Add email and press enter..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Recurrence Engine -->
+<section class="bg-white dark:bg-slate-900 sharp-border p-6">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-steel-gray">event_repeat</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-custom dark:text-white">Section 3: Recurrence Engine</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-4">Frequency (Days of Week)</label>
+<div class="flex gap-2">
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">M</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">T</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">W</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">T</div>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">F</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">S</div>
+</label>
+<label class="cursor-pointer">
+<input class="hidden peer" type="checkbox"/>
+<div class="size-10 sharp-border flex items-center justify-center text-xs font-bold peer-checked:bg-slate-custom peer-checked:text-white text-steel-gray bg-slate-50">S</div>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-steel-gray uppercase mb-2">Recurrence Limit Date</label>
+<div class="relative">
+<input class="w-full sharp-border bg-slate-50 dark:bg-slate-800 p-3 text-sm input-focus" placeholder="YYYY-MM-DD" type="text" value="2024-12-31"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-steel-gray pointer-events-none">calendar_month</span>
+</div>
+<p class="text-[10px] text-steel-gray mt-1 italic">Maximum schedule duration is 12 months from start date.</p>
+</div>
+</div>
+</section>
+<!-- Footer Actions -->
+<div class="flex justify-end items-center gap-4 pb-12 pt-4">
+<button class="px-6 py-3 text-sm font-bold text-steel-gray hover:text-slate-custom uppercase tracking-wider">Save Draft</button>
+<button class="bg-slate-custom hover:bg-slate-800 text-white px-10 py-4 text-sm font-black uppercase tracking-widest rounded-[2px] flex items-center gap-2">
+                        Finalize Schedule
+                        <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

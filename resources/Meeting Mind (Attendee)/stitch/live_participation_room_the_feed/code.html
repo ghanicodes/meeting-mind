@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meeting Mind Attendee Portal - Live Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "slate-deep": "#1E293B",
+                        "slate-light": "#F8FAFC",
+                        "border-gray": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-size: 20px; vertical-align: middle; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen flex-col">
+<!-- Top Header -->
+<header class="sticky top-0 z-50 w-full border-b border-border-gray bg-white px-6 py-4 dark:bg-slate-900">
+<div class="mx-auto flex max-w-[1440px] items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex h-8 w-8 items-center justify-center bg-primary text-white rounded">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-deep dark:text-white">
+                        Current Topic: <span class="text-primary">[Strategic Q4 Growth Sync]</span>
+</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 rounded border border-border-gray bg-slate-light px-3 py-1.5 dark:bg-slate-800">
+<div class="h-2 w-2 animate-pulse rounded-full bg-red-500"></div>
+<span class="text-xs font-semibold uppercase tracking-wider text-slate-deep dark:text-slate-300">Live Recording</span>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded border border-border-gray bg-white hover:bg-slate-light dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-deep dark:text-slate-300">settings</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded border border-border-gray bg-white hover:bg-slate-light dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-deep dark:text-slate-300">logout</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="mx-auto flex w-full max-w-[1440px] flex-1">
+<!-- Left Column: Live Feed -->
+<section class="flex flex-1 flex-col border-r border-border-gray bg-white dark:bg-slate-900">
+<div class="border-b border-border-gray px-8 py-4">
+<div class="flex gap-8">
+<a class="border-b-2 border-primary pb-2 text-sm font-bold text-slate-deep dark:text-white" href="#">Live Feed</a>
+<a class="pb-2 text-sm font-medium text-slate-400 hover:text-slate-deep dark:hover:text-white" href="#">Transcript History</a>
+<a class="pb-2 text-sm font-medium text-slate-400 hover:text-slate-deep dark:hover:text-white" href="#">Resources</a>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8 space-y-6">
+<!-- Scribe Note -->
+<div class="flex gap-4">
+<div class="h-10 w-10 shrink-0 rounded bg-slate-light dark:bg-slate-800 flex items-center justify-center border border-border-gray">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-deep dark:text-white">Scribe (Live Note)</span>
+<span class="text-xs text-slate-400">10:02 AM</span>
+</div>
+<div class="rounded border border-border-gray bg-slate-light p-4 dark:bg-slate-800/50">
+<p class="text-base leading-relaxed text-slate-deep dark:text-slate-200">
+                                    The team discussed the importance of expanding into the APAC region by Q4 to meet growth targets. Sarah mentioned that preliminary market research is already 60% complete.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Personal Speaker Note (User) -->
+<div class="flex gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded border border-border-gray">
+<img class="h-full w-full object-cover" data-alt="Close up portrait of the user attendee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgLWbVtousoqgJ0nVTVfntchyOYVE9YJNiQeyTDbFHqDhot2DnaFzrebbGIPOq9qEEQshSgZBdJd8aEOIUXPV1JoCkSwkRUy1EDtjtAUZ4CWdTy1Y1_Fl4AQiT0QNDbTQdE65aGpOfEvRhBqHLgf-EBqQngEzBgViocTfMOgqGzRKI3p6CU4hTwcmDI52QyOBNZHVw2qqT8NbrCA9cTh0BoX1EXEsSoALDxPsbScIQqq6tzpLSGHoceziH0d09ieLnNKicq4FdpEq6"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-deep dark:text-white">You (Speaker)</span>
+<span class="text-xs text-slate-400">10:05 AM</span>
+</div>
+<div class="flex gap-2">
+<button class="group flex h-8 w-8 items-center justify-center rounded border border-border-gray bg-white hover:bg-primary/10 transition-colors" title="Flag for Correction">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">construction</span>
+</button>
+<button class="group flex h-8 w-8 items-center justify-center rounded border border-border-gray bg-white hover:bg-red-50 transition-colors" title="Remove My Name">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-red-500">delete</span>
+</button>
+</div>
+</div>
+<div class="rounded border border-primary/20 bg-primary/5 p-4 dark:bg-primary/10">
+<p class="text-base leading-relaxed text-slate-deep dark:text-slate-200">
+                                    I mentioned that our current infrastructure can support up to 50,000 additional concurrent users without major upgrades, provided we optimize the database indexing before the October launch.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Another Attendee -->
+<div class="flex gap-4">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded border border-border-gray">
+<img class="h-full w-full object-cover" data-alt="Portrait of a female team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiWYo7b8fvkmoHHR4AqA4EaOtPPNBmEO7RLHaD4AFQA8kWkLu_44L_6f5NAJHOSJ-MNIV_DL-ve9Qya8roa9nYjlyDJqtTm1eVDFifUuW4OZTZWsld1ez99pvnikvFd5Mhn4d_yGBxiPtHUOn9QdnAUkBEzmb1JnxIJgPdP5C5BqSu9p1UQmds5hbRCdH-4RzY3SzPdf1XG2PfM17xLtvefW6MgFgfxZCPLgniTgm5FJqJz2uvzyGngoaCmb_9_DKJBPRItSguDL4C"/>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-deep dark:text-white">Elena Rodriguez</span>
+<span class="text-xs text-slate-400">10:08 AM</span>
+</div>
+<div class="rounded border border-border-gray bg-slate-light p-4 dark:bg-slate-800/50">
+<p class="text-base leading-relaxed text-slate-deep dark:text-slate-200">
+                                    Elena raised a concern regarding the hiring pipeline for the Singapore office. She suggested we might need to engage a local recruitment agency to meet the November 1st deadline.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Scribe Summary Note -->
+<div class="flex gap-4">
+<div class="h-10 w-10 shrink-0 rounded bg-slate-light dark:bg-slate-800 flex items-center justify-center border border-border-gray">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-slate-deep dark:text-white">Scribe (Live Note)</span>
+<span class="text-xs text-slate-400">10:12 AM</span>
+</div>
+<div class="rounded border border-border-gray bg-slate-light p-4 dark:bg-slate-800/50">
+<p class="text-base leading-relaxed text-slate-deep dark:text-slate-200">
+                                    The group reached a consensus on the Q4 budget allocation for marketing. $250k is approved for localized APAC digital campaigns.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Feed Interaction Footer -->
+<div class="border-t border-border-gray bg-white p-4 dark:bg-slate-900">
+<div class="flex items-center gap-4 rounded border border-border-gray bg-slate-light px-4 py-2 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-400">edit_note</span>
+<input class="flex-1 bg-transparent text-sm border-none focus:ring-0 placeholder-slate-400" placeholder="Add a private note or flag a correction..." type="text"/>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded">SUBMIT</button>
+</div>
+</div>
+</section>
+<!-- Right Sidebar: Action Items -->
+<aside class="w-[380px] bg-slate-light p-6 dark:bg-slate-800/30">
+<div class="mb-6 flex items-center justify-between">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-deep dark:text-white">Today's Action Items</h2>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded">6 TOTAL</span>
+</div>
+<div class="space-y-3">
+<!-- Action Item High Priority -->
+<div class="flex flex-col gap-2 rounded border border-border-gray bg-white p-4 dark:bg-slate-900">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-yellow-400"></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">High Priority</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400">Due Tomorrow</span>
+</div>
+<p class="text-sm font-medium text-slate-deep dark:text-slate-200">Review infrastructure scaling plan with DevOps team</p>
+<div class="mt-1 flex items-center gap-2">
+<span class="text-[11px] font-semibold text-primary">Assignee: Engineering Dept</span>
+</div>
+</div>
+<!-- Action Item Medium Priority -->
+<div class="flex flex-col gap-2 rounded border border-border-gray bg-white p-4 dark:bg-slate-900">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-yellow-200"></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Medium Priority</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400">Oct 15</span>
+</div>
+<p class="text-sm font-medium text-slate-deep dark:text-slate-200">Contact Singapore recruitment agencies for price quotes</p>
+<div class="mt-1 flex items-center gap-2">
+<span class="text-[11px] font-semibold text-primary">Assignee: Elena R.</span>
+</div>
+</div>
+<!-- Action Item -->
+<div class="flex flex-col gap-2 rounded border border-border-gray bg-white p-4 dark:bg-slate-900 opacity-80">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="h-2 w-2 rounded-full bg-yellow-100"></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Routine</span>
+</div>
+</div>
+<p class="text-sm font-medium text-slate-deep dark:text-slate-200">Circulate Q3 performance deck to all stakeholders</p>
+<div class="mt-1 flex items-center gap-2">
+<span class="text-[11px] font-semibold text-primary">Assignee: Sarah M.</span>
+</div>
+</div>
+<!-- Empty Placeholder for Future Items -->
+<div class="flex h-24 items-center justify-center rounded border border-dashed border-border-gray bg-white/50 dark:bg-slate-900/50">
+<button class="flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined !text-sm">add_circle</span>
+                            ADD ACTION ITEM
+                        </button>
+</div>
+</div>
+<!-- Sidebar Metadata -->
+<div class="mt-8 rounded bg-primary/5 p-4 border border-primary/10">
+<h3 class="text-xs font-bold text-primary mb-2 uppercase">Meeting Intelligence</h3>
+<p class="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                        Live participation is monitored. All validation requests are processed within 24 hours post-session.
+                    </p>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post-Meeting Feedback | Meeting Mind</title>
+<!-- Tailwind CSS v3 with Forms Plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style data-purpose="custom-styling">
+    /* Custom sharp corners for the executive aesthetic */
+    .sharp-2px {
+      border-radius: 2px;
+    }
+    /* Hover and Active states for rating squares */
+    .rating-box:hover {
+      border-color: #1E293B;
+      background-color: #F8FAFC;
+    }
+    .rating-box.selected {
+      background-color: #1E293B;
+      color: #FFFFFF;
+      border-color: #1E293B;
+    }
+    /* Removing default focus ring and adding subtle border focus */
+    .feedback-textarea:focus {
+      outline: none;
+      box-shadow: none;
+      border-bottom: 1px solid #E2E8F0;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFFFF] min-h-screen flex flex-col items-center justify-center p-4">
+<!-- BEGIN: FeedbackFormContainer -->
+<main class="w-full max-w-xl flex flex-col items-center" data-purpose="feedback-portal">
+<!-- BEGIN: HeaderSection -->
+<section class="mb-12 text-center" data-purpose="header">
+<h1 class="text-3xl font-normal text-[#1E293B] tracking-tight">How was the meeting?</h1>
+</section>
+<!-- END: HeaderSection -->
+<!-- BEGIN: FeedbackForm -->
+<form class="w-full space-y-12" data-purpose="feedback-inputs" id="feedback-form">
+<!-- BEGIN: RatingSystem -->
+<div class="flex flex-col items-center space-y-4" data-purpose="rating-selection">
+<div class="flex gap-3">
+<!-- Rating Box 1 -->
+<button class="rating-box w-12 h-12 flex items-center justify-center border border-[#E2E8F0] sharp-2px text-sm font-medium transition-colors" data-value="1" type="button">1</button>
+<!-- Rating Box 2 -->
+<button class="rating-box w-12 h-12 flex items-center justify-center border border-[#E2E8F0] sharp-2px text-sm font-medium transition-colors" data-value="2" type="button">2</button>
+<!-- Rating Box 3 -->
+<button class="rating-box w-12 h-12 flex items-center justify-center border border-[#E2E8F0] sharp-2px text-sm font-medium transition-colors" data-value="3" type="button">3</button>
+<!-- Rating Box 4 -->
+<button class="rating-box w-12 h-12 flex items-center justify-center border border-[#E2E8F0] sharp-2px text-sm font-medium transition-colors" data-value="4" type="button">4</button>
+<!-- Rating Box 5 -->
+<button class="rating-box w-12 h-12 flex items-center justify-center border border-[#E2E8F0] sharp-2px text-sm font-medium transition-colors" data-value="5" type="button">5</button>
+</div>
+<div class="flex justify-between w-64 text-[10px] uppercase tracking-widest text-[#94A3B8]">
+<span>Poor</span>
+<span>Excellent</span>
+</div>
+</div>
+<!-- END: RatingSystem -->
+<!-- BEGIN: CommentsSection -->
+<div class="w-full" data-purpose="comments-area">
+<label class="sr-only" for="confidential-comments">Confidential Comments</label>
+<textarea class="feedback-textarea w-full p-0 border-0 border-b border-transparent resize-none text-base placeholder-[#94A3B8] focus:ring-0 text-[#1E293B]" id="confidential-comments" placeholder="Confidential Comments" rows="6"></textarea>
+</div>
+<!-- END: CommentsSection -->
+<!-- BEGIN: SubmissionAction -->
+<div class="flex flex-col items-center gap-6" data-purpose="submission">
+<button class="bg-black text-white px-10 py-3 text-sm font-medium sharp-2px hover:bg-[#1E293B] transition-colors w-full sm:w-auto uppercase tracking-widest" type="submit">
+          Submit Feedback
+        </button>
+<!-- BEGIN: FooterDisclaimer -->
+<p class="text-[11px] text-[#94A3B8] text-center max-w-xs leading-relaxed" data-purpose="disclaimer">
+          Your feedback is anonymized and auto-filtered for professional language.
+        </p>
+<!-- END: FooterDisclaimer -->
+</div>
+<!-- END: SubmissionAction -->
+</form>
+<!-- END: FeedbackForm -->
+</main>
+<!-- END: FeedbackFormContainer -->
+<script data-purpose="rating-interaction">
+    /**
+     * Handles the selection of the rating boxes to provide visual feedback.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      const boxes = document.querySelectorAll('.rating-box');
+      
+      boxes.forEach(box => {
+        box.addEventListener('click', () => {
+          // Remove selected class from all boxes
+          boxes.forEach(b => b.classList.remove('selected'));
+          // Add selected class to the clicked box
+          box.classList.add('selected');
+        });
+      });
+
+      // Prevent default form submission for demonstration
+      const form = document.getElementById('feedback-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Feedback submitted successfully.');
+      });
+    });
+  </script>
+</body></html>

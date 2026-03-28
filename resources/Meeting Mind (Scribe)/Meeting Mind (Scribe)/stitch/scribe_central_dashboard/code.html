@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Precision Workspace - Scribe Central</title>
+<!-- Load Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'slate-deep': '#1E293B',
+            'gray-ultra-light': '#F8FAFC',
+          },
+          borderRadius: {
+            'custom': '2px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="global-resets">
+    /* Remove all shadows and gradients globally as per requirements */
+    * {
+      box-shadow: none !important;
+      background-image: none !important;
+    }
+    body {
+      background-color: #F8FAFC;
+      color: #1E293B;
+    }
+  </style>
+<style data-purpose="layout-structure">
+    .sidebar-width { width: 240px; }
+    .main-content { flex: 1; }
+    .divider-light { border-bottom: 1px solid #E2E8F0; }
+  </style>
+</head>
+<body class="flex min-h-screen font-sans">
+<!-- BEGIN: Sidebar Navigation -->
+<aside class="sidebar-width bg-white border-r border-slate-200 flex flex-col" data-purpose="sidebar-navigation">
+<div class="p-6 border-b border-slate-100">
+<h1 class="text-lg font-bold tracking-tight text-slate-deep uppercase">Precision</h1>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="block px-4 py-2 text-sm font-medium bg-gray-ultra-light rounded-custom text-slate-deep" data-purpose="nav-item-active" href="#">Dashboard</a>
+<a class="block px-4 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 rounded-custom transition-colors" href="#">Calendar</a>
+<a class="block px-4 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 rounded-custom transition-colors" href="#">Transcripts</a>
+<a class="block px-4 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 rounded-custom transition-colors" href="#">Organizations</a>
+<a class="block px-4 py-2 text-sm font-medium text-slate-500 hover:bg-gray-50 rounded-custom transition-colors" href="#">Settings</a>
+</nav>
+<div class="p-6 border-t border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-slate-200 rounded-custom" data-purpose="user-avatar"></div>
+<div class="overflow-hidden">
+<p class="text-xs font-semibold truncate">J. Transcriptionist</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-wider">Lead Scribe</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: Sidebar Navigation -->
+<!-- BEGIN: Main Content Area -->
+<main class="main-content flex flex-col" data-purpose="main-content-area">
+<!-- BEGIN: Header -->
+<header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
+<h2 class="text-xl font-semibold text-slate-deep">Scribe Central</h2>
+<div class="flex items-center gap-4">
+<span class="text-xs text-slate-400 font-medium uppercase tracking-widest">Status: Online</span>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Dashboard Content -->
+<div class="p-8 max-w-5xl mx-auto w-full">
+<!-- BEGIN: Active Session Alert -->
+<section class="mb-8 p-6 bg-white border border-slate-200 rounded-custom flex items-center justify-between" data-purpose="active-session-banner">
+<div>
+<span class="inline-block px-2 py-0.5 rounded-custom bg-red-50 text-red-600 text-[10px] font-bold uppercase mb-2">Live Now</span>
+<h3 class="text-lg font-bold text-slate-deep">Quarterly Financial Review</h3>
+<p class="text-sm text-slate-500">Global Logistics Corp • 10:00 AM - 11:30 AM</p>
+</div>
+<button class="bg-slate-deep text-white px-6 py-3 rounded-custom text-sm font-semibold hover:bg-slate-800 transition-colors" data-purpose="join-room-button">
+          Join Meeting Room
+        </button>
+</section>
+<!-- END: Active Session Alert -->
+<!-- BEGIN: Assigned Meetings List -->
+<section class="bg-white border border-slate-200 rounded-custom overflow-hidden" data-purpose="assigned-meetings-container">
+<div class="px-6 py-4 border-b border-slate-200 bg-gray-ultra-light">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500">Upcoming Meetings</h3>
+</div>
+<div class="divide-y divide-slate-100">
+<!-- Meeting Row 1 -->
+<div class="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-slate-400 uppercase">Today</span>
+<h4 class="text-base font-bold text-slate-deep leading-tight">Project Phoenix Status Sync</h4>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>02:00 PM</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Nova Tech Industries</span>
+</div>
+</div>
+<a class="text-xs font-semibold text-slate-500 hover:text-slate-deep border border-slate-200 px-3 py-1.5 rounded-custom transition-all" data-purpose="agenda-link" href="#">View Agenda</a>
+</div>
+<!-- Meeting Row 2 -->
+<div class="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-slate-400 uppercase">Tomorrow</span>
+<h4 class="text-base font-bold text-slate-deep leading-tight">Board of Directors Strategy</h4>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>09:30 AM</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Hamilton &amp; Sons</span>
+</div>
+</div>
+<a class="text-xs font-semibold text-slate-500 hover:text-slate-deep border border-slate-200 px-3 py-1.5 rounded-custom transition-all" data-purpose="agenda-link" href="#">View Agenda</a>
+</div>
+<!-- Meeting Row 3 -->
+<div class="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-slate-400 uppercase">Oct 24</span>
+<h4 class="text-base font-bold text-slate-deep leading-tight">Annual Shareholder Address</h4>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>11:00 AM</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Retail Solutions Ltd.</span>
+</div>
+</div>
+<a class="text-xs font-semibold text-slate-500 hover:text-slate-deep border border-slate-200 px-3 py-1.5 rounded-custom transition-all" data-purpose="agenda-link" href="#">View Agenda</a>
+</div>
+<!-- Meeting Row 4 -->
+<div class="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-slate-400 uppercase">Oct 25</span>
+<h4 class="text-base font-bold text-slate-deep leading-tight">HR Policy Revision Workshop</h4>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>03:30 PM</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Evergreen Medical Group</span>
+</div>
+</div>
+<a class="text-xs font-semibold text-slate-500 hover:text-slate-deep border border-slate-200 px-3 py-1.5 rounded-custom transition-all" data-purpose="agenda-link" href="#">View Agenda</a>
+</div>
+<!-- Meeting Row 5 -->
+<div class="px-6 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-slate-400 uppercase">Oct 27</span>
+<h4 class="text-base font-bold text-slate-deep leading-tight">Client Discovery Call: Phase 2</h4>
+<div class="flex items-center gap-3 text-sm text-slate-500">
+<span>10:00 AM</span>
+<span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span>Orbit Media Agency</span>
+</div>
+</div>
+<a class="text-xs font-semibold text-slate-500 hover:text-slate-deep border border-slate-200 px-3 py-1.5 rounded-custom transition-all" data-purpose="agenda-link" href="#">View Agenda</a>
+</div>
+</div>
+<div class="px-6 py-4 bg-gray-ultra-light border-t border-slate-100 flex justify-center">
+<button class="text-xs font-bold text-slate-400 uppercase tracking-widest hover:text-slate-deep transition-colors">View All Assignments</button>
+</div>
+</section>
+<!-- END: Assigned Meetings List -->
+</div>
+<!-- END: Dashboard Content -->
+</main>
+<!-- END: Main Content Area -->
+</body></html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1E293B",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#0F172A",
+                        "slate-50": "#F8FAFC",
+                        "slate-100": "#F1F5F9",
+                        "slate-200": "#E2E8F0",
+                        "slate-900": "#1E293B",
+                        "highlight": "#FEF08A"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .grid-line { border: 1px solid #E2E8F0; }
+        .no-shadow { box-shadow: none !important; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 flex flex-col bg-background-light">
+<div class="p-6 border-b border-slate-200 flex items-center gap-3">
+<div class="size-8 bg-primary flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white text-xl">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-primary text-sm font-bold leading-tight uppercase tracking-wider">Executive</h1>
+<p class="text-slate-500 text-[10px] font-medium tracking-widest">ARCHIVE v2.4.0</p>
+</div>
+</div>
+<nav class="flex-1 px-3 py-6 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-100 text-primary border-r-2 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span class="text-sm font-semibold">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span class="text-sm font-medium">Action Items</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="text-sm font-medium">Archives</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200">
+<div class="flex items-center gap-3 p-2">
+<div class="size-8 bg-slate-200 rounded-full bg-cover" data-alt="Executive profile portrait avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJjhNM-MJb6h_08ghHYzP2u3awj0So2IT1uClnrN_NACDM7Uv5GVYKjgZ-VDfwFEPOuDwzYrMf-Jt2u81tifkVSECqnJCOC77MAEcjb7MFfAgAPRSD7EMvsoy0Ca3QULQ_kf5j2fDYimsEhFkPNwnigiZED_wroaVkp3SQvQIDxQVTJM0iXvuNnN3lchZjVLG_yRoGW8oY1jVbz8JJ4vnqWSAQI6-KPvDqy6TFMZp6qd629_e-oxDvApVWBNWuaxTm8QLxTqB44gir')"></div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">J. Henderson</span>
+<span class="text-[10px] text-slate-500">Chief Officer</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 px-8 flex items-center justify-between bg-white sticky top-0 z-10">
+<div class="flex items-center gap-2 text-slate-500 text-xs font-medium uppercase tracking-widest">
+<span>Archive</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-bold">Past Meetings Joined</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-1.5 border border-slate-200 text-sm focus:ring-0 focus:border-primary outline-none w-64 bg-slate-50" placeholder="Filter archives..." type="text"/>
+</div>
+<button class="flex items-center gap-2 text-slate-900 hover:text-primary border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                        Export to PDF
+                    </button>
+</div>
+</header>
+<div class="p-8 max-w-6xl w-full mx-auto">
+<!-- Notes View -->
+<article class="bg-white border border-slate-200 p-12 no-shadow">
+<div class="mb-12 border-b border-slate-200 pb-8 flex justify-between items-start">
+<div>
+<h2 class="text-3xl font-black text-slate-900 tracking-tight mb-2 uppercase">Strategic Q4 Growth Sync</h2>
+<div class="flex gap-4 items-center">
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest">Verified</span>
+<span class="text-slate-400 text-sm font-medium border-l border-slate-200 pl-4">October 24, 2023</span>
+<span class="text-slate-400 text-sm font-medium border-l border-slate-200 pl-4">Room 402 / Remote Hybrid</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Duration</span>
+<span class="text-slate-900 font-mono font-medium">01:45:12</span>
+</div>
+</div>
+<div class="space-y-10">
+<!-- Section -->
+<section>
+<h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">I. Executive Summary</h3>
+<div class="text-slate-700 leading-relaxed max-w-3xl">
+<p>Review of the third quarter fiscal performance against established KPIs. Initial alignment on the strategic roadmap for the fourth quarter with a focus on enterprise scaling and infrastructure redundancy. The board has approved the supplemental budget for the data center migration initiative.</p>
+</div>
+</section>
+<!-- Section -->
+<section>
+<h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">II. Key Discussion Points</h3>
+<div class="grid grid-cols-1 border border-slate-200">
+<div class="p-6 border-b border-slate-200 flex gap-6">
+<span class="text-slate-300 font-mono text-sm">09:15</span>
+<div>
+<p class="font-bold text-slate-900 mb-1">Revenue Performance Review</p>
+<p class="text-slate-600 text-sm">Q3 ended at 104% of target. Primary growth driven by the APAC region expansion. Retention rates steady at 94.2%.</p>
+</div>
+</div>
+<div class="p-6 border-b border-slate-200 flex gap-6">
+<span class="text-slate-300 font-mono text-sm">09:45</span>
+<div>
+<p class="font-bold text-slate-900 mb-1">Infrastructure Bottlenecks</p>
+<p class="text-slate-600 text-sm">CTO raised concerns regarding database latency during peak European trading hours. Migration to the new shard architecture is prioritized for mid-November.</p>
+</div>
+</div>
+<div class="p-6 flex gap-6">
+<span class="text-slate-300 font-mono text-sm">10:30</span>
+<div>
+<p class="font-bold text-slate-900 mb-1">Hiring Roadmap</p>
+<p class="text-slate-600 text-sm">Agreement reached to scale the engineering team by 15% in Q4 to support the integration project.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Items Section -->
+<section>
+<h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">III. Assigned Action Items</h3>
+<div class="space-y-2">
+<div class="border border-slate-200 p-4 flex items-center justify-between group hover:border-slate-400 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-300">check_box_outline_blank</span>
+<span class="text-slate-700 text-sm">Finalize Q3 regional audit reports for the finance committee.</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Assigned: Finance Team</span>
+</div>
+<!-- Highlighted Task for Attendee -->
+<div class="bg-highlight border border-slate-200 p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900">radio_button_checked</span>
+<span class="text-slate-900 text-sm font-semibold">Review and approve the revised infrastructure budget for data center migration.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-slate-900 text-white text-[9px] px-2 py-0.5 font-bold uppercase">Personal Action</span>
+<span class="text-[10px] font-bold text-slate-900 uppercase">Due: Oct 30</span>
+</div>
+</div>
+<div class="border border-slate-200 p-4 flex items-center justify-between group hover:border-slate-400 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-300">check_box_outline_blank</span>
+<span class="text-slate-700 text-sm">Schedule external audit for compliance certification.</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Assigned: Legal</span>
+</div>
+<!-- Another Highlighted Task -->
+<div class="bg-highlight border border-slate-200 p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900">radio_button_checked</span>
+<span class="text-slate-900 text-sm font-semibold">Sign off on the executive hiring committee's shortlist for the VP of Engineering.</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-slate-900 text-white text-[9px] px-2 py-0.5 font-bold uppercase">Personal Action</span>
+<span class="text-[10px] font-bold text-slate-900 uppercase">Due: Nov 02</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Attachments Section -->
+<section>
+<h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">IV. Verified Resources</h3>
+<div class="flex gap-4">
+<div class="border border-slate-200 p-3 flex items-center gap-3 w-64 hover:bg-slate-50 cursor-pointer">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Q3_Performance_Full.csv</span>
+<span class="text-[10px] text-slate-400 uppercase">2.4 MB · Spreadsheet</span>
+</div>
+</div>
+<div class="border border-slate-200 p-3 flex items-center gap-3 w-64 hover:bg-slate-50 cursor-pointer">
+<span class="material-symbols-outlined text-primary">show_chart</span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-900">Roadmap_V4_Deck.pdf</span>
+<span class="text-[10px] text-slate-400 uppercase">12.8 MB · Document</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="mt-20 pt-8 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+<span>Document ID: REF-990-24X</span>
+<span>Archived on Oct 24, 2023 · 12:44 PM GMT</span>
+<div class="flex gap-4">
+<a class="hover:text-primary underline" href="#">Report Discrepancy</a>
+<a class="hover:text-primary underline" href="#">Request Access Change</a>
+</div>
+</div>
+</article>
+</div>
+</main>
+</div>
+</body></html>

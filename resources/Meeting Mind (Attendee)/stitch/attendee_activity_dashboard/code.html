@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Attendee Activity Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "slate-custom": "#1e293b",
+                        "gray-nav": "#f8fafc",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; color: #1e293b; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-custom">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-gray-nav border-r border-slate-200 flex flex-col fixed h-full">
+<div class="p-6 flex items-center gap-3 border-b border-slate-200 mb-4">
+<div class="size-8 bg-slate-custom rounded-full flex items-center justify-center text-white font-bold text-xs" data-alt="Executive profile placeholder icon">
+                    JD
+                </div>
+<div>
+<h1 class="text-sm font-bold text-slate-custom uppercase tracking-wider">Attendee</h1>
+<p class="text-[10px] text-slate-500 font-medium">EXECUTIVE VIEW</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 text-slate-custom rounded border border-slate-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium">Meetings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<span class="text-sm font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+</nav>
+<div class="p-4 mt-auto border-t border-slate-200">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-10 bg-white">
+<header class="mb-10">
+<h2 class="text-3xl font-bold text-slate-custom tracking-tight">Attendee Activity Dashboard</h2>
+<p class="text-slate-500 mt-1">Productivity overview for Friday, Oct 27.</p>
+</header>
+<div class="grid grid-cols-12 gap-10">
+<!-- Left Column: Upcoming Meetings -->
+<div class="col-span-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-slate-custom uppercase tracking-wide">Upcoming Meetings</h3>
+<span class="text-xs font-semibold text-slate-400">CHRONOLOGICAL VIEW</span>
+</div>
+<div class="space-y-3 relative">
+<!-- Timeline Line -->
+<div class="absolute left-6 top-0 bottom-0 w-px bg-slate-100 z-0"></div>
+<!-- Meeting Row 1 -->
+<div class="relative z-10 flex items-center gap-6 bg-white border border-slate-200 p-4 hover:shadow-sm transition-shadow">
+<div class="w-12 text-center">
+<span class="text-[10px] font-bold text-slate-400 block uppercase">10:00</span>
+<span class="text-[10px] font-bold text-slate-400 block uppercase">AM</span>
+</div>
+<div class="size-3 rounded-full bg-primary border-2 border-white ring-1 ring-slate-200"></div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-custom">Quarterly Strategy Review</h4>
+<p class="text-xs text-slate-500">Board Room A • 90 min</p>
+</div>
+<a class="text-xs font-bold text-primary hover:underline uppercase tracking-tighter" href="#">View Details</a>
+</div>
+<!-- Meeting Row 2 -->
+<div class="relative z-10 flex items-center gap-6 bg-white border border-slate-200 p-4 hover:shadow-sm transition-shadow">
+<div class="w-12 text-center">
+<span class="text-[10px] font-bold text-slate-400 block uppercase">01:00</span>
+<span class="text-[10px] font-bold text-slate-400 block uppercase">PM</span>
+</div>
+<div class="size-3 rounded-full bg-slate-300 border-2 border-white ring-1 ring-slate-200"></div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-custom">Product Roadmap Alignment</h4>
+<p class="text-xs text-slate-500">Virtual Meeting • 60 min</p>
+</div>
+<a class="text-xs font-bold text-primary hover:underline uppercase tracking-tighter" href="#">View Details</a>
+</div>
+<!-- Meeting Row 3 -->
+<div class="relative z-10 flex items-center gap-6 bg-white border border-slate-200 p-4 hover:shadow-sm transition-shadow">
+<div class="w-12 text-center">
+<span class="text-[10px] font-bold text-slate-400 block uppercase">04:00</span>
+<span class="text-[10px] font-bold text-slate-400 block uppercase">PM</span>
+</div>
+<div class="size-3 rounded-full bg-slate-300 border-2 border-white ring-1 ring-slate-200"></div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-custom">Global Town Hall</h4>
+<p class="text-xs text-slate-500">Main Auditorium • 45 min</p>
+</div>
+<a class="text-xs font-bold text-primary hover:underline uppercase tracking-tighter" href="#">View Details</a>
+</div>
+</div>
+</div>
+<!-- Right Column: My Action Items -->
+<div class="col-span-4">
+<div class="mb-6">
+<h3 class="text-lg font-bold text-slate-custom uppercase tracking-wide">My Action Items</h3>
+<p class="text-[10px] text-slate-400 font-bold uppercase mt-1">From Previous Sessions</p>
+</div>
+<div class="bg-gray-nav border border-slate-200 p-1 space-y-1">
+<!-- Task Item 1 -->
+<div class="bg-white border border-slate-100 p-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 size-2 rounded-full bg-[#FEF08A] shrink-0 border border-slate-300"></div>
+<div>
+<p class="text-sm font-semibold text-slate-custom leading-tight">Review Q3 Budget Allocation</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[9px] font-bold bg-slate-100 px-1.5 py-0.5 border border-slate-200 text-slate-500">FINANCE</span>
+<span class="text-[9px] font-bold text-slate-400">DUE IN 2D</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Item 2 -->
+<div class="bg-white border border-slate-100 p-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 size-2 rounded-full bg-[#FEF08A] shrink-0 border border-slate-300"></div>
+<div>
+<p class="text-sm font-semibold text-slate-custom leading-tight">Approve Marketing Campaign Assets</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[9px] font-bold bg-slate-100 px-1.5 py-0.5 border border-slate-200 text-slate-500">GROWTH</span>
+<span class="text-[9px] font-bold text-slate-400">DUE TODAY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Item 3 -->
+<div class="bg-white border border-slate-100 p-4">
+<div class="flex items-start gap-3 opacity-60">
+<div class="mt-1 size-2 rounded-full bg-slate-200 shrink-0 border border-slate-300"></div>
+<div>
+<p class="text-sm font-semibold text-slate-custom leading-tight line-through">Sign Executive NDA Updates</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="text-[9px] font-bold bg-slate-100 px-1.5 py-0.5 border border-slate-200 text-slate-500">LEGAL</span>
+<span class="text-[9px] font-bold text-emerald-600">COMPLETED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- View All Button -->
+<button class="w-full py-3 text-[10px] font-bold text-slate-500 hover:text-slate-800 uppercase tracking-widest bg-slate-50 border-t border-slate-100 transition-colors">
+                            View All Tasks (12)
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bottom Stats / Quick View (Optional) -->
+<div class="mt-16 grid grid-cols-4 gap-6">
+<div class="border-t-2 border-slate-900 pt-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Weekly Progress</p>
+<p class="text-2xl font-bold text-slate-900">84%</p>
+</div>
+<div class="border-t-2 border-slate-200 pt-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Pending Approvals</p>
+<p class="text-2xl font-bold text-slate-900">03</p>
+</div>
+<div class="border-t-2 border-slate-200 pt-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase">New Documents</p>
+<p class="text-2xl font-bold text-slate-900">07</p>
+</div>
+<div class="border-t-2 border-slate-200 pt-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Network Status</p>
+<p class="text-2xl font-bold text-emerald-600 uppercase text-sm mt-2">Optimal</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

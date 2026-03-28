@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "corporate-slate": "#1E293B",
+                        "corporate-gray": "#64748B",
+                        "corporate-border": "#E2E8F0",
+                        "ghost-white": "#F8FAFC"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-line { stroke: #ec5b13; stroke-width: 2; fill: none; }
+        .chart-grid { stroke: #E2E8F0; stroke-width: 1; }
+        .chart-point { fill: #ec5b13; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-corporate-slate dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-corporate-border bg-white dark:bg-background-dark px-6 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl">analytics</span>
+<h2 class="text-corporate-slate dark:text-white text-lg font-bold leading-tight tracking-tight uppercase">Organization Portal</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-corporate-gray dark:text-slate-400 text-xs font-semibold uppercase tracking-wider hover:text-primary" href="#">Dashboard</a>
+<a class="text-primary text-xs font-semibold uppercase tracking-wider border-b-2 border-primary" href="#">Analytics</a>
+<a class="text-corporate-gray dark:text-slate-400 text-xs font-semibold uppercase tracking-wider hover:text-primary" href="#">Feedback</a>
+<a class="text-corporate-gray dark:text-slate-400 text-xs font-semibold uppercase tracking-wider hover:text-primary" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-corporate-gray text-sm">search</span>
+<input class="bg-ghost-white dark:bg-slate-800 border border-corporate-border text-sm py-1.5 pl-9 pr-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none w-64" placeholder="Search analytics..."/>
+</div>
+<div class="w-8 h-8 rounded-full bg-corporate-border overflow-hidden border border-corporate-border">
+<img alt="User profile avatar" data-alt="Corporate user profile minimalist avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZYwscIUUX5GM5icyqK8CsSyVdNiCaK7zE7tV-zIAwaWukCniPW4fshq_8-cFzVema9WwUryGmvo7hNMFaryf9bOJoCnC7vIVaJJyWjuPUNl8YxPE5s_oGGhXfadNBfaIrSjMVH6fV5IoBQrzf6PKFsBsppaOHiEsGFB-hdoBR0MxtctH2foQOOQg7d6VATNY9wgOm-h3Uarfr5mdmOTnwMoOdmFwcVtOi4pb4_zpAF8QjNzgTo6V-Ww8K8BdWORD-4qhne48TNyOL"/>
+</div>
+</div>
+</header>
+<main class="flex-1 flex overflow-hidden">
+<aside class="w-64 border-r border-corporate-border bg-white dark:bg-background-dark hidden lg:flex flex-col p-4 gap-6">
+<div class="flex flex-col gap-1">
+<h1 class="text-corporate-slate dark:text-white text-sm font-bold uppercase tracking-tighter">Corp Analytics</h1>
+<p class="text-corporate-gray text-xs">Precision Reporting v4.2</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-corporate-gray hover:bg-ghost-white" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span class="text-xs font-medium uppercase tracking-wide">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary border-r-2 border-primary" href="#">
+<span class="material-symbols-outlined text-lg">trending_up</span>
+<span class="text-xs font-medium uppercase tracking-wide">Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-corporate-gray hover:bg-ghost-white" href="#">
+<span class="material-symbols-outlined text-lg">forum</span>
+<span class="text-xs font-medium uppercase tracking-wide">Feedback</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-corporate-gray hover:bg-ghost-white" href="#">
+<span class="material-symbols-outlined text-lg">group</span>
+<span class="text-xs font-medium uppercase tracking-wide">Members</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-corporate-gray hover:bg-ghost-white" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span class="text-xs font-medium uppercase tracking-wide">Settings</span>
+</a>
+</nav>
+</aside>
+<section class="flex-1 flex flex-col bg-ghost-white dark:bg-slate-900 overflow-y-auto">
+<div class="p-8 max-w-6xl mx-auto w-full flex flex-col gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<h2 class="text-2xl font-black text-corporate-slate dark:text-white uppercase tracking-tight">Organizational Feedback &amp; Analytics</h2>
+<p class="text-corporate-gray text-sm mt-1">Aggregated attendee feedback and sentiment trends across all meetings.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="bg-white border border-corporate-border px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-corporate-slate flex items-center gap-2">
+                                    All Time <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<button class="bg-white border border-corporate-border px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-corporate-slate flex items-center gap-2">
+                                    Last 30 Days <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<button class="bg-white border border-corporate-border px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-corporate-slate flex items-center gap-2">
+                                    Marketing Dept <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-corporate-border p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-corporate-gray">Meeting Quality Trend</h3>
+<div class="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-corporate-gray">
+<div class="flex items-center gap-2"><span class="w-2 h-2 bg-primary"></span> Org Avg</div>
+<div class="flex items-center gap-2"><span class="w-2 h-2 bg-corporate-border"></span> Industry Bench</div>
+</div>
+</div>
+<div class="h-64 w-full relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 200">
+<line class="chart-grid" x1="0" x2="800" y1="0" y2="0"></line>
+<line class="chart-grid" x1="0" x2="800" y1="50" y2="50"></line>
+<line class="chart-grid" x1="0" x2="800" y1="100" y2="100"></line>
+<line class="chart-grid" x1="0" x2="800" y1="150" y2="150"></line>
+<line class="chart-grid" x1="0" x2="800" y1="200" y2="200"></line>
+<polyline class="chart-line" points="0,120 100,80 200,100 300,40 400,60 500,30 600,50 700,20 800,40"></polyline>
+<circle class="chart-point" cx="100" cy="80" r="3"></circle>
+<circle class="chart-point" cx="200" cy="100" r="3"></circle>
+<circle class="chart-point" cx="300" cy="40" r="3"></circle>
+<circle class="chart-point" cx="400" cy="60" r="3"></circle>
+<circle class="chart-point" cx="500" cy="30" r="3"></circle>
+<circle class="chart-point" cx="600" cy="50" r="3"></circle>
+<circle class="chart-point" cx="700" cy="20" r="3"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-[10px] font-bold uppercase tracking-widest text-corporate-gray">
+<span>Oct 01</span>
+<span>Oct 07</span>
+<span>Oct 14</span>
+<span>Oct 21</span>
+<span>Oct 28</span>
+<span>Nov 04</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="text-xs font-bold uppercase tracking-widest text-corporate-slate dark:text-white">Anonymized Comments</h3>
+<span class="text-[10px] font-medium text-corporate-gray uppercase tracking-widest">Showing 142 total entries</span>
+</div>
+<div class="bg-white dark:bg-background-dark border border-corporate-border overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-ghost-white dark:bg-slate-800 border-b border-corporate-border">
+<th class="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-corporate-gray">Date</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-corporate-gray">Rating</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-corporate-gray">Commentary</th>
+<th class="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-corporate-gray w-10">Flag</th>
+</tr>
+</thead>
+<tbody class="text-xs divide-y divide-corporate-border">
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-04</td>
+<td class="px-4 py-3 font-bold text-corporate-slate dark:text-white">[4.8/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">Objectives were clearly met. Efficient use of time. Agenda was followed perfectly.</td>
+<td class="px-4 py-3"></td>
+</tr>
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-04</td>
+<td class="px-4 py-3 font-bold text-red-600">[1.2/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">Lack of professional conduct during the final Q&amp;A session from the moderator.</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-sm text-red-600 font-bold bg-red-50 p-0.5 border border-red-200">priority_high</span>
+</td>
+</tr>
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-03</td>
+<td class="px-4 py-3 font-bold text-corporate-slate dark:text-white">[3.5/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">Good discussion but ran 15 minutes over the scheduled time slot.</td>
+<td class="px-4 py-3"></td>
+</tr>
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-03</td>
+<td class="px-4 py-3 font-bold text-corporate-slate dark:text-white">[4.2/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">Very helpful insights on the Q4 roadmap. Great cross-functional participation.</td>
+<td class="px-4 py-3"></td>
+</tr>
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-02</td>
+<td class="px-4 py-3 font-bold text-red-600">[2.0/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">Technical issues made it impossible to see the presentation for the first 20 minutes.</td>
+<td class="px-4 py-3">
+<span class="material-symbols-outlined text-sm text-red-600 font-bold bg-red-50 p-0.5 border border-red-200">priority_high</span>
+</td>
+</tr>
+<tr class="hover:bg-ghost-white dark:hover:bg-slate-800 transition-colors">
+<td class="px-4 py-3 font-mono text-corporate-gray">2023-11-02</td>
+<td class="px-4 py-3 font-bold text-corporate-slate dark:text-white">[5.0/5]</td>
+<td class="px-4 py-3 text-corporate-slate dark:text-slate-300">The most productive sync we've had this quarter. Action items are clear.</td>
+<td class="px-4 py-3"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex justify-center gap-1 mt-4">
+<button class="w-8 h-8 border border-corporate-border bg-white text-[10px] font-bold">1</button>
+<button class="w-8 h-8 border border-corporate-border bg-ghost-white text-[10px] font-bold text-corporate-gray">2</button>
+<button class="w-8 h-8 border border-corporate-border bg-ghost-white text-[10px] font-bold text-corporate-gray">3</button>
+<button class="w-8 h-8 border border-corporate-border bg-ghost-white text-[10px] font-bold text-corporate-gray">...</button>
+<button class="w-8 h-8 border border-corporate-border bg-ghost-white text-[10px] font-bold text-corporate-gray">12</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</body></html>

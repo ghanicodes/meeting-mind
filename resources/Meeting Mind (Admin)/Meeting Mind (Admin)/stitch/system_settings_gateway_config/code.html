@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "slate-panel": "#1E293B",
+                        "border-gray": "#E2E8F0",
+                        "header-gray": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .form-input:focus { border-color: #135bec !important; ring: 0 !important; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-panel dark:text-slate-100 font-display">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 border-r border-border-gray bg-header-gray dark:bg-slate-900/50 flex flex-col">
+<div class="p-6 border-b border-border-gray">
+<h1 class="text-slate-panel dark:text-white text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+                Infrastructure
+            </h1>
+<p class="text-slate-500 text-xs mt-1 uppercase tracking-wider font-semibold">Gateway Control</p>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-800 text-primary border border-border-gray rounded shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">System Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">cloud</span>
+<span class="text-sm font-medium">Cloud Integration</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span class="text-sm font-medium">Security</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 rounded transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Audit Logs</span>
+</a>
+</nav>
+<div class="p-4 border-t border-border-gray">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">
+                    JD
+                </div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-medium truncate">Admin User</p>
+<p class="text-[10px] text-slate-500 truncate">v2.4.0-stable</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<header class="h-16 border-b border-border-gray bg-white dark:bg-slate-900 flex items-center justify-between px-8">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 text-sm">Infrastructure</span>
+<span class="material-symbols-outlined text-slate-300 text-sm">chevron_right</span>
+<span class="text-slate-panel dark:text-white text-sm font-medium">System Settings &amp; Gateway Config</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 text-sm font-medium border border-border-gray hover:bg-header-gray transition-colors">Discard</button>
+<button class="px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-blue-700 transition-colors">Save Changes</button>
+</div>
+</header>
+<div class="p-8 max-w-5xl mx-auto space-y-8">
+<!-- Page Title -->
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-slate-panel dark:text-white">System Settings &amp; Gateway Config</h2>
+<p class="text-slate-500 mt-1">Configure global infrastructure, API gateways, and notification protocols.</p>
+</div>
+<!-- SMTP Gateway Section -->
+<section class="bg-white dark:bg-slate-900 border border-border-gray overflow-hidden">
+<header class="px-6 py-3 bg-header-gray dark:bg-slate-800/50 border-b border-border-gray flex items-center justify-between">
+<h3 class="font-semibold text-sm text-slate-panel dark:text-white uppercase tracking-tight">SMTP Gateway</h3>
+<span class="material-symbols-outlined text-slate-400 text-sm">mail</span>
+</header>
+<div class="p-6 grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">SMTP Server</label>
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950" placeholder="smtp.provider.com" type="text" value="smtp.relay-service.net"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Port</label>
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950" type="number" value="587"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Authentication Username</label>
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950" type="text" value="postmaster@relay-service.net"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">API Key / Password</label>
+<div class="relative">
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950 pr-10" type="password" value="••••••••••••••••"/>
+<button class="absolute right-3 top-2 text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Cloud Integration Section -->
+<section class="bg-white dark:bg-slate-900 border border-border-gray overflow-hidden">
+<header class="px-6 py-3 bg-header-gray dark:bg-slate-800/50 border-b border-border-gray flex items-center justify-between">
+<h3 class="font-semibold text-sm text-slate-panel dark:text-white uppercase tracking-tight">Cloud Integration</h3>
+<span class="material-symbols-outlined text-slate-400 text-sm">cloud_queue</span>
+</header>
+<div class="p-6 space-y-6">
+<div class="flex items-start gap-4 p-4 border border-border-gray bg-slate-50 dark:bg-slate-950">
+<div class="p-2 bg-primary/10 rounded">
+<span class="material-symbols-outlined text-primary">cloud_sync</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold">Active Provider: AWS (us-east-1)</p>
+<p class="text-xs text-slate-500">Connected since Jan 12, 2024. All services operational.</p>
+</div>
+<button class="text-xs font-semibold text-primary hover:underline">Change Provider</button>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Bucket Endpoint</label>
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950" type="text" value="s3.us-east-1.amazonaws.com/assets-production"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Secret Key</label>
+<div class="relative">
+<input class="w-full border border-border-gray px-3 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-white dark:bg-slate-950 pr-10" type="password" value="AKIAIOSFODNN7EXAMPLE"/>
+<button class="absolute right-3 top-2 text-slate-400 hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Defaults Section -->
+<section class="bg-white dark:bg-slate-900 border border-border-gray overflow-hidden">
+<header class="px-6 py-3 bg-header-gray dark:bg-slate-800/50 border-b border-border-gray flex items-center justify-between">
+<h3 class="font-semibold text-sm text-slate-panel dark:text-white uppercase tracking-tight">Security Defaults</h3>
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+</header>
+<div class="p-6 space-y-4">
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<div>
+<p class="text-sm font-medium">Force SSL/TLS</p>
+<p class="text-xs text-slate-500">Require secure connections for all gateway traffic.</p>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<div>
+<p class="text-sm font-medium">Strict API Rate Limiting</p>
+<p class="text-xs text-slate-500">Threshold: 1000 requests/minute per authenticated client.</p>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
+<div>
+<p class="text-sm font-medium">IP Whitelisting</p>
+<p class="text-xs text-slate-500">Restrict configuration access to predefined internal IP ranges.</p>
+</div>
+<div class="w-10 h-5 bg-slate-300 dark:bg-slate-700 rounded-full relative cursor-pointer">
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Danger Zone -->
+<div class="mt-12 pt-8 border-t border-border-gray">
+<div class="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900 p-6 flex items-center justify-between">
+<div>
+<h4 class="text-red-700 dark:text-red-400 font-bold text-sm uppercase tracking-wider">Reset Infrastructure Config</h4>
+<p class="text-red-600/70 dark:text-red-500/70 text-sm">Permanently delete all gateway configurations and cloud credentials. This action cannot be undone.</p>
+</div>
+<button class="px-4 py-2 bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition-colors">Reset to Factory</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

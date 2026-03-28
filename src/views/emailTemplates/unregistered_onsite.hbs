@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Email</title>
+</head>
+
+<body>
+    <div
+        style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #e1e4e8; border-radius: 12px; padding: 20px;">
+        <h2 style="color: #7c3aed;">🤝 In-Person Invite: {{meeting_title}}</h2>
+        <p>Hi {{user_name}}, you've been invited to an onsite meeting at <strong>{{location}}</strong>.</p>
+
+        <div style="background: #f3f4f6; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p><strong>When:</strong> {{meeting_date}} at {{meeting_time}}</p>
+        </div>
+
+        <p>We use <strong>AI Meeting Intelligence</strong> to ensure no task is forgotten. Create your free account to
+            view the agenda and follow-up tasks:</p>
+
+        <div style="text-align: center;">
+            <a href="{{app_url}}/signup"
+                style="background: #7c3aed; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold;">Create
+                Account</a>
+        </div>
+    </div>
+</body>
+
+</html>

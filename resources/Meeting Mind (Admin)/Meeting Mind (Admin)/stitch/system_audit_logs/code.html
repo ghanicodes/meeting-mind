@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101622",
+                        "slate-custom": "#1E293B",
+                        "sidebar-light": "#F1F5F9",
+                        "border-light": "#E2E8F0"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .log-row:hover { background-color: rgba(241, 245, 249, 0.5); }
+        .log-table th { border-bottom: 1px solid #E2E8F0; }
+        .log-table td { border-bottom: 1px solid #E2E8F0; }
+        .sidebar-item-active { background-color: white; border-right: 2px solid #135bec; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-custom antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Navigation Sidebar -->
+<aside class="w-64 bg-sidebar-light border-r border-border-light flex flex-col shrink-0">
+<div class="p-6 border-b border-border-light flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">security</span>
+</div>
+<div>
+<h1 class="text-sm font-bold tracking-tight uppercase">Admin Portal</h1>
+<p class="text-[10px] text-slate-500 font-medium">ENTERPRISE SECURITY</p>
+</div>
+</div>
+<nav class="flex-1 py-4 overflow-y-auto">
+<div class="px-3 mb-2">
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Core</p>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                        Dashboard
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-primary sidebar-item-active" href="#">
+<span class="material-symbols-outlined text-[20px]">list_alt</span>
+                        System Logs
+                    </a>
+</div>
+</div>
+<div class="px-3 mt-6">
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Access</p>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                        User Management
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+                        Security Policies
+                    </a>
+</div>
+</div>
+</nav>
+<div class="p-4 border-t border-border-light bg-sidebar-light/50">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-slate-200 border border-border-light" data-alt="User avatar for enterprise administrator" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYfWM3aE5ieIVw3yUAwAI4vcvS3ZDMscVBCyDH4fK7KHjM8vqICw6LCsHvae-Kk9SLyzGLxX4axHih_Bw38LBJnLj5rTquMuSlCLNyp8jNLMoMEOoY4w9mnCO2FeS8r-8KFwlDM1fpw_e_5qV6m-mt40km9C9NjgPQgOd0-b4vTQDY9z11fnCAEHPy4m_6IwIK2NTxXMUTay6Hds8UlfOeKBSaTA13H2hC8AmxAIAsw0vYizyK-U44wfiQXRrXC0QoUrxRwULzItmo'); background-size: cover;"></div>
+<div class="flex-1 overflow-hidden">
+<p class="text-xs font-semibold truncate">S. Henderson</p>
+<p class="text-[10px] text-slate-500">Super Admin</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col bg-white overflow-hidden">
+<!-- Header / Controls -->
+<header class="p-6 border-b border-border-light">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-2xl font-bold tracking-tight text-slate-custom">System Audit Logs</h2>
+<p class="text-sm text-slate-500 mt-1">Forensic monitoring of all system-wide administrative actions and API access.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 border border-border-light text-xs font-medium hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export CSV
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 bg-primary text-white text-xs font-medium hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-sm">refresh</span>
+                            Live Refresh
+                        </button>
+</div>
+</div>
+<div class="flex gap-3 mt-2">
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-border-light text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-slate-400" placeholder="Search by IP, user, or event hash..." type="text"/>
+</div>
+<div class="flex gap-2">
+<select class="bg-slate-50 border border-border-light text-xs font-medium px-3 py-2 outline-none focus:ring-1 focus:ring-primary">
+<option>All Event Types</option>
+<option>Authentication</option>
+<option>Configuration</option>
+<option>Data Access</option>
+</select>
+<select class="bg-slate-50 border border-border-light text-xs font-medium px-3 py-2 outline-none focus:ring-1 focus:ring-primary">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option>Custom Range</option>
+</select>
+<button class="p-2 border border-border-light bg-slate-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Log Table -->
+<div class="flex-1 overflow-auto p-6 bg-slate-50/30">
+<div class="bg-white border border-border-light shadow-sm">
+<table class="w-full text-left log-table border-collapse">
+<thead>
+<tr class="bg-slate-50 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+<th class="px-4 py-3 w-48">Timestamp</th>
+<th class="px-4 py-3 w-40">User Role</th>
+<th class="px-4 py-3">Event Type</th>
+<th class="px-4 py-3 w-40">IP Address</th>
+<th class="px-4 py-3 w-24 text-center">Risk</th>
+</tr>
+</thead>
+<tbody class="font-mono text-[13px] text-slate-custom">
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 14:02:11</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SUPER_ADMIN</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+<span class="font-medium">API Key Reset</span>
+<span class="text-[10px] text-slate-400 ml-2">ID: ak_8291_x</span>
+</td>
+<td class="px-4 py-3">192.168.1.105</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-red-600">HIGH</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 13:58:45</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">DEVOPS_ENG</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+<span class="font-medium">System Config Change</span>
+<span class="text-[10px] text-slate-400 ml-2">Target: cluster-01</span>
+</td>
+<td class="px-4 py-3">10.0.4.22</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-red-600">HIGH</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 13:45:02</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SYS_DAEMON</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-200"></div>
+<span>Log Rotation Cycle</span>
+</td>
+<td class="px-4 py-3">127.0.0.1</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-slate-400">LOW</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 13:30:11</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SUPPORT_L1</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+<span>User Password Reset</span>
+<span class="text-[10px] text-slate-400 ml-2">UID: 99201</span>
+</td>
+<td class="px-4 py-3">172.16.2.88</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-orange-500">MED</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 13:15:22</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SEC_AUDITOR</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+<span class="font-medium">Firewall Rule Update</span>
+<span class="text-[10px] text-slate-400 ml-2">Port: 8080 CLOSED</span>
+</td>
+<td class="px-4 py-3">192.168.1.5</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-red-600">HIGH</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 13:02:59</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">ADMIN_MGMT</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-200"></div>
+<span>New User Created</span>
+</td>
+<td class="px-4 py-3">10.0.0.141</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-slate-400">LOW</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 12:45:10</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SUPER_ADMIN</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+<span class="font-medium">SSH Key Authorized</span>
+<span class="text-[10px] text-slate-400 ml-2">User: root</span>
+</td>
+<td class="px-4 py-3">212.45.12.3</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-red-600">HIGH</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 12:33:04</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SYS_DAEMON</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-200"></div>
+<span>Backup Started</span>
+</td>
+<td class="px-4 py-3">127.0.0.1</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-slate-400">LOW</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 12:12:44</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">SEC_AUDITOR</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+<span>Database Export</span>
+<span class="text-[10px] text-slate-400 ml-2">Table: USERS_META</span>
+</td>
+<td class="px-4 py-3">192.168.1.5</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-orange-500">MED</span>
+</td>
+</tr>
+<tr class="log-row">
+<td class="px-4 py-3 text-slate-500">2023-11-24 11:58:12</td>
+<td class="px-4 py-3">
+<span class="bg-slate-100 px-2 py-0.5 border border-border-light font-mono text-[11px]">DEVOPS_ENG</span>
+</td>
+<td class="px-4 py-3 flex items-center gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-900"></div>
+<span class="font-medium">SSL Certificate Renew</span>
+</td>
+<td class="px-4 py-3">10.0.4.22</td>
+<td class="px-4 py-3 text-center">
+<span class="text-[10px] font-bold text-red-600">HIGH</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footer Stats -->
+<footer class="px-6 py-3 border-t border-border-light bg-slate-50 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+<div class="flex gap-6">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    System Status: Operational
+                </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                    Live Feed: Active
+                </span>
+<span>Showing 1-50 of 12,402 entries</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-6 h-6 border border-border-light bg-white flex items-center justify-center hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="px-2 font-mono">Page 1 of 249</span>
+<button class="w-6 h-6 border border-border-light bg-white flex items-center justify-center hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
