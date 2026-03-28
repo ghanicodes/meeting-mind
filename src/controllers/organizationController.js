@@ -1,5 +1,9 @@
 import Organization from "../models/Organization.js";
-
+import Meeting from "../models/Meeting.js";
+import bcrypt from "bcrypt";
+import cloudinary from "../config/cloudinary.js";
+import cloudinaryUpload from "../utils/cloudinaryUpload.js";  // ✅ sahi naam
+import sendEmail from "../utils/sendEmail.js";                // ✅ sahi naam
 
 export const createOrganization = async (req, res) => {
     try {
